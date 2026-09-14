@@ -194,7 +194,11 @@
       class="instructions"
     >
       <div class ="browser-check-text">
-        <BrowserCheck @done="browserCheckDone" />
+        <BrowserCheck
+          :longest-sentence="longestSentence"
+          :sentence-font-size="sentenceFontSize"
+          @done="browserCheckDone"
+        />
       </div>
     </Screen>
 
@@ -336,6 +340,27 @@ function calculateSentenceFontSize(trials){
   return Math.min(MAX_SENTENCE_FONT_SIZE, MAX_SENTENCE_FONT_SIZE*scale);
 }
 
+function findWidestSentence(trials) {
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+
+  ctx.font = `450 ${MAX_SENTENCE_FONT_SIZE}px Consolas, monospace`;
+
+  let widestSentence = "";
+  let widestWidth = 0;
+
+  for (const trial of trials) {
+    const width = ctx.measureText(trial.text).width;
+
+    if (width > widestWidth) {
+      widestWidth = width;
+      widestSentence = trial.text;
+    }
+  }
+
+  return widestSentence;
+}
+
 export default {
   name: "App",
   components: { MotrTrial, BrowserCheck },
@@ -350,13 +375,15 @@ export default {
       ? calculateSentenceFontSize(allTrials)
       : FIXED_SENTENCE_FONT_SIZE;
 
+    const longestSentence = findWidestSentence(allTrials);
+
     console.log("FONT MODE:", SENTENCE_FONT_MODE);
     console.log("FONT SIZE:", sentenceFontSize);
     
     console.log(`[MoTR] sentence font size: ${sentenceFontSize}px`);
     
     console.log(`[MoTR] list ${listId}: ${practiceTrials.length} practice + ${mainTrials.length} main trials`, mainTrials);
-    return { config, listId, practiceTrials, mainTrials, sentenceFontSize, submitting: false };
+    return { config, listId, practiceTrials, mainTrials, sentenceFontSize, longestSentence, submitting: false };
   },
   created() {
     // magpie replaces the socket with a stub that raises a "no socket URL is set" warning
