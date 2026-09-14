@@ -52,6 +52,10 @@
         Once the entire sentence fits in the window, you may continue.
       </p>
 
+      <p>
+        If you cannot increase your window size (without zooming out!) to make the text fit, please exit this study.
+      </p>
+
       <button @click="$emit('done')">
         Continue
       </button>
