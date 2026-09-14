@@ -25,11 +25,57 @@
   </div>
 </template>
 
+//step 2 -- make sure longest sentence fits
+<template v-else>
+  <p> 
+    <b>Please check the sentence below.</b>
+  </p>
+
+  <p>
+    If the entire blurred sentence does not fit on one line,
+    please widen your browser window until it does.
+  </p>
+
+   <div class="sentence-preview-window">
+      <div
+        class="sentence-preview"
+        :style="{ fontSize: sentenceFontSize + 'px' }"
+      >
+        {{ longestSentence }}
+      </div>
+  </div>
+  <p>
+    Once the entire sentence fits in the window, you may continue.
+  </p>
+
+  <button @click="$emit('done')">
+    Continue
+  </button>
+</template>
+
 <script>
 
 export default {
   name: "BrowserCheck",
-  };
+  //define the longest sentence to preview in browser check step 2
+  props: {
+    longestSentence: {
+    type: String,
+    required: true,
+  },
+
+  sentenceFontSize: {
+    type: Number,
+    required: true,
+  },
+},
+
+data() {
+  return {
+    showPreview: false,
+    ;
+},
+};
 </script>
 
 <style>
@@ -38,5 +84,52 @@ export default {
   border-radius: 3px;
   padding: 0 4px;
   font-family: inherit;
+}
+
+/*
+  Make the preview use almost the entire browser width,
+  rather than the narrower instruction-text container.
+*/
+.sentence-preview-window {
+  width: 90vw;
+  max-width: 90vw;
+
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  margin-left: 50%;
+  transform: translateX(-50%);
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  border: 1px solid #999;
+  padding: 20px;
+}
+
+
+/*
+  This is ONLY the blurred layer.
+
+  There is no sharp text layer and no mouse interaction,
+  so the participant cannot unblur this sentence.
+*/
+.sentence-preview {
+  font-family: Consolas, monospace;
+  font-weight: 450;
+
+  white-space: nowrap !important;
+
+  width: max-content;
+
+  opacity: 0.3;
+  filter: blur(0.28em);
+
+  pointer-events: none;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 </style>
