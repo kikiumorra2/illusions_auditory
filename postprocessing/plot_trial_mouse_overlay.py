@@ -250,6 +250,7 @@ def make_figure(
         ha="center",
         va="center",
         fontsize=10,
+        fontfamily = "monospace";
         alpha=0.0,
         zorder=0,
     )
@@ -329,7 +330,7 @@ def make_figure(
     )
     if px_per_data_x <= 0:
         raise ValueError("Could not compute pixel/data transform for x-axis.")
-    probe = ax.text(0, 0, "M", fontsize=global_fontsize, alpha=0.0)
+    probe = ax.text(0, 0, "M", fontsize=global_fontsize, fontfamily = "monospace", alpha=0.0)
     token_widths = []
     for token in tokens:
         probe.set_text(token)
@@ -369,6 +370,7 @@ def make_figure(
         ha="left",
         va="center",
         fontsize=global_fontsize,
+        fontfamily = "monospace",
         color="#1f1f1f",
         zorder=1,
     )
