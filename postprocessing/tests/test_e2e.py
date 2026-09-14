@@ -21,8 +21,22 @@ BINARY = ["FPFix", "FPReg", "RegIn_excl", "RegIn_incl"]
 
 
 def run(*args):
-    r = subprocess.run([PY] + [str(a) for a in args], check=True, cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    return r.stdout.decode()
+    r = subprocess.run(
+        [PY] + [str(a) for a in args],
+        check=False,
+        cwd=ROOT,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+    )
+
+    if r.returncode != 0:
+        raise AssertionError(
+            f"Command failed:\n{' '.join(str(a) for a in args)}\n\n"
+            f"{r.stdout}"
+        )
+
+    return r.stdout
 
 
 def pipeline(tmp, name, export, *step1_args):
