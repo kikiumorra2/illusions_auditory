@@ -120,6 +120,8 @@ export default {
   white-space: nowrap !important;
   width: max-content;
 
+  text-align: center;
+
   pointer-events: none;
 
   user-select: none;
