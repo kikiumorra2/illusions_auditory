@@ -346,7 +346,7 @@ export default {
 
     const allTrials = [...practiceTrials, ...mainTrials];
 
-    const sentenceFontSize = SENTENCE_FONT_MODE === "responsive" ? calculateSentenceFontSize(allTrials) : FIXED_SENTENCE_FONT_SIZE;
+    const sentenceFontSize = calculateSentenceFontSize(allTrials);
 
     console.log(`[MoTR] sentence font size: ${sentenceFontSize}px`);
     
