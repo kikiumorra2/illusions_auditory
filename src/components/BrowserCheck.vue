@@ -43,9 +43,7 @@
         <div
           class="sentence-preview"
           :style="{ fontSize: sentenceFontSize + 'px' }"
-        >
-          {{ previewSentence }}
-        </div>
+        >{{previewSentence}}</div>
       </div>
 
       <p>
