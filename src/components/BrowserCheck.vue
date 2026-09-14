@@ -20,11 +20,11 @@
 
       <p>
         Please use a desktop or laptop computer with a mouse or trackpad,
-        keep this window open and do not change the zoom until the study is complete.
+        <b>make this window full-screen</b>, keep it open and do not change the zoom until the study is complete.
       </p>
 
       <button @click="showPreview = true">
-        I have reset the zoom to 100%
+        I have reset the zoom to 100% and maximized my window
       </button>
     </template>
 
@@ -35,8 +35,8 @@
       </p>
 
       <p>
-        If you cannot fully see "START" and "END" in the box,
-        please widen your browser window until you do.
+        Being able to see the entire text is a crucial for this study, so if you cannot fully see "START" and "END" in the box,
+        <b>we kindly ask you to quit this study.</b> Thank you.
       </p>
 
       <div class="sentence-preview-window">
@@ -46,12 +46,9 @@
         >{{previewSentence}}</div>
       </div>
 
-      <p>
-        Once the entire sentence fits in the window, you may continue.
-      </p>
 
       <button @click="$emit('done')">
-        Continue
+        The text fits on my screen
       </button>
     </template>
 
@@ -85,7 +82,7 @@ export default {
   computed: {
     previewSentence() {
       //return "With schools still closed, cars still buried and streets still blocked by the widespread weekend snowstorm, officials are asking people to help out.";
-        return "START                                                                                                                                            END";
+        return "START--------------------------------------------------------------------------------------------------------------------------------------------END";
     },
   },
 };
