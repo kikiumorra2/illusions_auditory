@@ -214,12 +214,30 @@ def participants_table(df):
 
 def items_table(materials_dir):
     frames = []
+
     for name in ("items.csv", "fillers.csv", "practice.csv"):
         path = materials_dir / name
         if path.exists():
             frames.append(pd.read_csv(path, dtype=str))
+
+    lists_dir = materials_dir / "lists"
+
+    if lists_dir.exists():
+        for path in sorted(lists_dir.glob("list_*.csv")):
+            frames.append(pd.read_csv(path, dtype=str))
+
     items = pd.concat(frames, ignore_index=True)
-    items["item_id"] = items["item_id"].str.strip() + "_" + items["condition_id"].str.strip()
+
+    items = items.drop_duplicates(
+        subset=["item_id", "condition_id", "text"]
+    )
+
+    items["item_id"] = (
+        items["item_id"].str.strip()
+        + "_"
+        + items["condition_id"].str.strip()
+    )
+
     return items[["item_id", "condition_id", "text"]]
 
 
