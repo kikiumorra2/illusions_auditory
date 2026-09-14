@@ -118,7 +118,7 @@ export default {
   font-weight: 450;
 
   white-space: nowrap !important;
-  width: max-content;
+  width: 100%;
 
   text-align: center;
 
