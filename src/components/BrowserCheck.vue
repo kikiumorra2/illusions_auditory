@@ -35,7 +35,7 @@
       </p>
 
       <p>
-        Being able to see the entire text is a crucial for this study, so if you cannot fully see "START" and "END" in the box,
+        Being able to see the entire text is crucial for this study, so if you cannot fully see "START" and "END" in the box,
         <b>we kindly ask you to quit this study.</b> Thank you.
       </p>
 
