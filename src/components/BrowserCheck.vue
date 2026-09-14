@@ -20,7 +20,7 @@
 
       <p>
         Please use a desktop or laptop computer with a mouse or trackpad,
-        <b>make this window full-screen</b>, keep it open and do not change the zoom until the study is complete.
+        <b>make this window full-screen</b> and not bigger than your screen. Keep it open and do not change the zoom until the study is complete.
       </p>
 
       <button @click="showPreview = true">
