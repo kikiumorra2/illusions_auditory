@@ -6,10 +6,10 @@
  */
 export default {
   // Recorded in every data row as `Experiment`. Use a short, unique slug per experiment.
-  experimentName: "eyetrack_stim_831",
+  experimentName: "SAP_mousetrack_pilot_383",
 
   // Completion code shown on the final screen. Must match completionUrl in magpie.config.js.
-  completionCode: "C1B0Y2VH",
+  completionCode: "C1B0Y2VH", 
 
   // Which list to use when the URL has no ?LIST_ID=N parameter.
   // "random" picks uniformly among materials/lists/list_*.csv; a number picks that list.
