@@ -35,7 +35,7 @@
       </p>
 
       <p>
-        If the entire blurred sentence does not fit on one line,
+        If the entire sentence does not fit on one line,
         please widen your browser window until it does.
       </p>
 
