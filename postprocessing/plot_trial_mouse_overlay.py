@@ -250,7 +250,7 @@ def make_figure(
         ha="center",
         va="center",
         fontsize=10,
-        fontfamily = "monospace";
+        fontfamily = "monospace",
         alpha=0.0,
         zorder=0,
     )
