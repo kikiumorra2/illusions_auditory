@@ -44,7 +44,7 @@
           class="sentence-preview"
           :style="{ fontSize: sentenceFontSize + 'px' }"
         >
-          {{ longestSentence }}
+          {{ previewSentence }}
         </div>
       </div>
 
@@ -86,19 +86,12 @@ export default {
 
   computed: {
     previewSentence() {
-      const targetLength = this.longestSentence.length;
+      
 
       const text =
-        "If this sentence does not fit on one line, please widen your browser window until the entire sentence is visible. ";
+        "If you do not see this entire sentence in one line on your screen, please widen your window until it fits. Please do this before you start. Thank you!.";
 
-      let result = "";
-
-      while (result.length < targetLength) {
-        result += text;
-      }
-
-      return result.slice(0, targetLength);
-    },
+      
   },
 };
 </script>
