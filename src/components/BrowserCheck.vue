@@ -86,7 +86,7 @@ export default {
 
   computed: {
     previewSentence() {
-      return "If you do not see this entire sentence in one line on your screen, please widen your window until it fits. Please do this before you start. Thank you!.";  
+      return "If you do not see this entire text in one line on your screen, please widen your window until it fits.--Please do this before you start.--Thank you!";  
     },
   },
 };
