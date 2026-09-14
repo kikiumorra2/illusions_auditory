@@ -304,9 +304,9 @@ import { submitRows } from "./submit";
 //  "reponsive" --> makes the font size s.t. the longest sentence takes up 90% of the window width
 //  "fixed" --> sets font size to whatever FIXED_SENTENCE_FONT_SIZE is
   
-const SENTENCE_FONT_MODE = "responsive";
+const SENTENCE_FONT_MODE = "fixed";
 
-const FIXED_SENTENCE_FONT_SIZE = 16;
+const FIXED_SENTENCE_FONT_SIZE = 5;
   
 const MAX_SENTENCE_FONT_SIZE = 16;
 const SENTENCE_WIDTH_FRACTION = 0.90;
