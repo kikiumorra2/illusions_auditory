@@ -83,6 +83,23 @@ export default {
       showPreview: false,
     };
   },
+
+  computed: {
+    previewSentence() {
+      const targetLength = this.longestSentence.length;
+
+      const text =
+        "If this sentence does not fit on one line, please widen your browser window until the entire sentence is visible. ";
+
+      let result = "";
+
+      while (result.length < targetLength) {
+        result += text;
+      }
+
+      return result.slice(0, targetLength);
+    },
+  },
 };
 </script>
 
@@ -117,9 +134,6 @@ export default {
 
   white-space: nowrap !important;
   width: max-content;
-
-  opacity: 0.3;
-  filter: blur(0.28em);
 
   pointer-events: none;
 
