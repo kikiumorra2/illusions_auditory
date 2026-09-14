@@ -310,7 +310,7 @@ import { submitRows } from "./submit";
   
 const SENTENCE_FONT_MODE = "fixed";
 
-const FIXED_SENTENCE_FONT_SIZE = 35;
+const FIXED_SENTENCE_FONT_SIZE = 16;
   
 const MAX_SENTENCE_FONT_SIZE = 16;
 const SENTENCE_WIDTH_FRACTION = 0.90;
