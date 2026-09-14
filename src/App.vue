@@ -306,7 +306,7 @@ import { submitRows } from "./submit";
   
 const SENTENCE_FONT_MODE = "responsive";
 
-const FIXED_SENTENCE_FONT_SIZE = 5;
+const FIXED_SENTENCE_FONT_SIZE = 35;
   
 const MAX_SENTENCE_FONT_SIZE = 16;
 const SENTENCE_WIDTH_FRACTION = 0.90;
