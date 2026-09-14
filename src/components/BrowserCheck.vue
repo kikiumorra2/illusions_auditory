@@ -118,7 +118,7 @@ export default {
   box-sizing: border-box;
 
   border: 1px solid #999;
-  padding: 20px;
+  padding: 1px;
 }
 
 .sentence-preview {
