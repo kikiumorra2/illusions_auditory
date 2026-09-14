@@ -31,12 +31,12 @@
     <!-- STEP 2 -->
     <template v-else>
       <p>
-        <b>Please check the sentence below.</b>
+        <b>Please check text box below.</b>
       </p>
 
       <p>
-        If the entire sentence does not fit on one line,
-        please widen your browser window until it does.
+        If you cannot fully see "START" and "END" in the box,
+        please widen your browser window until you do.
       </p>
 
       <div class="sentence-preview-window">
@@ -48,10 +48,6 @@
 
       <p>
         Once the entire sentence fits in the window, you may continue.
-      </p>
-
-      <p>
-        If you cannot increase your window size (without zooming out!) to make the text fit, please exit this study.
       </p>
 
       <button @click="$emit('done')">
@@ -88,7 +84,8 @@ export default {
 
   computed: {
     previewSentence() {
-      return "If you do not see this entire text in one line on your screen, please widen your window until it fits.--Please do this before you start.--Thank you!";  
+      //return "With schools still closed, cars still buried and streets still blocked by the widespread weekend snowstorm, officials are asking people to help out.";
+        return "START                                                                                                                                            END";
     },
   },
 };
@@ -103,8 +100,8 @@ export default {
 }
 
 .sentence-preview-window {
-  width: 90vw;
-  max-width: 90vw;
+  width: calc(100vw - 2px);
+  max-width: calc(100vw - 2px);
 
   margin-top: 30px;
   margin-bottom: 30px;
