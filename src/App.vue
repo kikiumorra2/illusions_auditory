@@ -300,6 +300,14 @@ import { submitRows } from "./submit";
   
 //make the font be a function of the size of the screen so that you never have to scroll to see full sentence -->
 
+//SENTENCE_FONT_MODE = 
+//  "reponsive" --> makes the font size s.t. the longest sentence takes up 90% of the window width
+//  "fixed" --> sets font size to whatever FIXED_SENTENCE_FONT_SIZE is
+  
+const SENTENCE_FONT_MODE = "fixed";
+
+const FIXED_SENTENCE_FONT_SIZE = 16;
+  
 const MAX_SENTENCE_FONT_SIZE = 16;
 const SENTENCE_WIDTH_FRACTION = 0.90;
 
@@ -338,7 +346,7 @@ export default {
 
     const allTrials = [...practiceTrials, ...mainTrials];
 
-    const sentenceFontSize = calculateSentenceFontSize(allTrials);
+    const sentenceFontSize = SENTENCE_FONT_MODE === "responsive" ? calculateSentenceFontSize(allTrials) : FIXED_SENTENCE_FONT_SIZE;
 
     console.log(`[MoTR] sentence font size: ${sentenceFontSize}px`);
     
