@@ -210,7 +210,7 @@
         //Maybe we could even bold this part? perhaps it's too on the nose for the behavior we're trying to elicit but it would be nice to get them to internalize that
         
         In this study, you will read sentences. Unlike in normal reading, however, the text
-        will be blurred. To bring the text into focus, move your mouse over it. Feel free to go back and re-read any part of the sentence at any point.
+        will be blurred. To bring the text into focus, move your mouse over it. <b>Feel free to go back and re-read</b> any part of the sentence at any point.
         Take as much time as you need on any sentence — there is no rush! 
         When you are done reading, click the <b>Done Reading</b> button.
       </p>
