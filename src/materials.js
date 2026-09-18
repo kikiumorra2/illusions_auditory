@@ -55,7 +55,7 @@ function toTrial(row, phase) {
     item_id: String(row.item_id),
     condition_id: String(row.condition_id),
     text: String(row.text).trim(),
-    audio_fie: row.audio_file,
+    audio_file: row.audio_file,
     phase, // "practice" | "main"
     row, // the full original CSV row, in case you need extra columns
   };
