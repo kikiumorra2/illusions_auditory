@@ -147,7 +147,7 @@
 
   computed: {
     audioSrc() {
-      return `${process.env.BASE_URL}audio/${this.trial.audio_file}`;
+      return `${process.env.BASE_URL}audio_files/${this.trial.audio_file}`;
     },
   },
 
