@@ -163,6 +163,8 @@
 
       doneListening: false,
       doneListeningTime: null,
+
+      completedListenCount: 0,
     };
   },
 
@@ -216,7 +218,15 @@
     
     onAudioEnded() {
       this.isPlaying = false;
-      this.hasFinishedOnce = true;
+    
+      this.completedListenCount += 1;
+    
+      if (this.completedListenCount === 1) {
+        this.hasFinishedOnce = true;
+      }
+    
+      // Every completed listen after the first is a replay
+      this.replayCount = Math.max(0, this.completedListenCount - 1);
     },
 
 
@@ -239,6 +249,7 @@
       
         playCount: this.playCount,
         replayCount: this.replayCount,
+        completedListenCount: this.completedListenCount,
       
         backwardSeekCount: this.backwardSeekCount,
         backwardSeekEvents: JSON.stringify(this.backwardSeekEvents),
