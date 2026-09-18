@@ -211,6 +211,26 @@
         Take as much time as you need on any sentence — there is no rush! 
         When you are done reading, click the <b>Done Reading</b> button.
       </p>
+
+      <p>
+        Here is a short demonstration video:
+      </p>
+
+      <div class="motr-demo-container">
+         <video
+          class="motr-demo-video"
+          :src="motrDemo"
+          autoplay
+          muted
+          loop
+          playsinline
+          controls
+        >
+          Your browser does not support the video element.
+        </video>
+      </div>
+
+      
       <p>
         After each sentence you will be asked a question about it. Indicate your answer by
         clicking the appropriate option, then click <b>Next</b>.
@@ -302,6 +322,7 @@ import BrowserCheck from "./components/BrowserCheck.vue";
 import { chooseListId, buildPracticeTrials, buildMainTrials } from "./materials";
 import { browserInfo } from "./browser";
 import { submitRows } from "./submit";
+import motrDemo from "./assets/motr_demo.mov";
   
   
 //make the font be a function of the size of the screen so that you never have to scroll to see full sentence -->
@@ -385,7 +406,7 @@ export default {
     console.log(`[MoTR] sentence font size: ${sentenceFontSize}px`);
     
     console.log(`[MoTR] list ${listId}: ${practiceTrials.length} practice + ${mainTrials.length} main trials`, mainTrials);
-    return { config, listId, practiceTrials, mainTrials, sentenceFontSize, longestSentence, submitting: false };
+    return { config, listId, practiceTrials, mainTrials, sentenceFontSize, longestSentence, motrDemo, submitting: false };
   },
   created() {
     // magpie replaces the socket with a stub that raises a "no socket URL is set" warning
@@ -592,5 +613,19 @@ export default {
   -moz-user-select: text;
   -ms-user-select: text;
   user-select: text;
+}
+
+
+.motr-demo-container {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.motr-demo-video {
+  width: 800px;
+  max-width: 90vw;
+  height: auto;
+  display: inline-block;
 }
 </style>
