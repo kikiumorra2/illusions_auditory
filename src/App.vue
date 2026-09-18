@@ -322,7 +322,7 @@ import BrowserCheck from "./components/BrowserCheck.vue";
 import { chooseListId, buildPracticeTrials, buildMainTrials } from "./materials";
 import { browserInfo } from "./browser";
 import { submitRows } from "./submit";
-import motrDemo from "./assets/motr_demo.mov";
+import motrDemo from "./assets/motr_demo.mp4";
   
   
 //make the font be a function of the size of the screen so that you never have to scroll to see full sentence -->
