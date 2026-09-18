@@ -144,8 +144,6 @@
   
       isPlaying: false,
       hasFinishedOnce: false,
-
-      doneListenint: false,
   
       grammarRating: null,
       meaningRating: null,
@@ -163,6 +161,7 @@
       // lets us distinguish participant seeking from our Replay button
       programmaticSeek: false,
 
+      doneListening: false,
       doneListeningTime: null,
     };
   },
