@@ -194,7 +194,7 @@
         Phase: this.trial.phase,
 
         TrialText: this.trial.text,
-        AudioFile: this.trial.row.audio_file,
+        AudioFile: this.trial.audio_file,
 
         grammarRating: this.grammarRating,
         meaningRating: this.meaningRating,
