@@ -1,5 +1,5 @@
 item_id,condition_id,text,audio_file
-1,wh,Who were we recently talking with about this?,1_wh.mp3
-1,wh_fronted,Who were we recently talking about this with?,1_wh_fronted.mp3
-1,wh_inverted,Who were we recently talking about with this?,1_wh_inverted.mp3
-1,wh_fronted_inverted,Who were we recently talking with this about?,1_wh_fronted_inverted.mp3
+2,wh_practice,Who were we recently talking with about this?,1_wh.mp3
+2,wh_fronted_practice,Who were we recently talking about this with?,1_wh_fronted.mp3
+2,wh_inverted_practice,Who were we recently talking about with this?,1_wh_inverted.mp3
+2,wh_fronted_inverted_practice,Who were we recently talking with this about?,1_wh_fronted_inverted.mp3
