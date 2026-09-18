@@ -2,7 +2,7 @@
 // See https://magpie-experiments.org/ for the full list of options.
 export default {
   // Numeric experiment ID created on the magpie server. Every submission is stored under it.
-  experimentId: "383",
+  experimentId: "384",
 
   // magpie backend that receives the data.
   serverUrl: "https://magpie-serverless.vercel.app",
@@ -17,7 +17,7 @@ export default {
   // 'directLink' – submits to the server; participant ID is typed in on the consent screen.
   // 'prolific'   – like directLink, but also records Prolific URL parameters and redirects
   //                to completionUrl at the end.
-  mode: "debug",
+  mode: "directLink",
 
   language: "en",
 };
