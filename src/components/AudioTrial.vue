@@ -11,7 +11,7 @@
       </template>
     </div>
 
-    <div class="audio-controls">
+    <div v-if="!doneListening" class="audio-controls">
       <audio
         ref="audio"
         :src="audioSrc"
@@ -25,19 +25,19 @@
         @seeked="onSeeked"
       ></audio>
     
-      <div class="replay-button">
+      <div class="done-listening-button">
         <button
-          v-if="playCount > 0"
-          @click="replayAudio"
+          :disabled="!hasFinishedOnce"
+          @click="finishListening"
         >
-          Replay from beginning
+          Done listening
         </button>
       </div>
     </div>
    
 
-    <!-- Only show ratings once sentence has been heard completely once -->
-    <div v-if="hasFinishedOnce" class="ratings">
+    <!-- Only show ratings once "Done Listening" button has been pressed -->
+    <div v-if="doneListening" class="ratings">
 
       <div class="rating-question">
         <p>
@@ -144,6 +144,8 @@
   
       isPlaying: false,
       hasFinishedOnce: false,
+
+      doneListenint: false,
   
       grammarRating: null,
       meaningRating: null,
@@ -170,6 +172,18 @@
   },
 
   methods: {
+    //makes doneListing --> true after pressing button
+    finishListening() {
+      const audio = this.$refs.audio;
+    
+      if (audio) {
+        audio.pause();
+      }
+    
+      this.isPlaying = false;
+      this.doneListening = true;
+    },
+    
     onAudioPlay() {
       this.isPlaying = true;
     
