@@ -162,6 +162,8 @@
   
       // lets us distinguish participant seeking from our Replay button
       programmaticSeek: false,
+
+      doneListeningTime: null,
     };
   },
 
@@ -181,6 +183,7 @@
       }
     
       this.isPlaying = false;
+      this.doneListeningTime = Date.now() - this.trialStart;
       this.doneListening = true;
     },
     
