@@ -241,7 +241,7 @@
     <!-- 4. Practice trials ------------------------------------------------------- -->
     <template v-for="(trial, i) in practiceTrials">
       <Screen :key="'practice-' + i" class="main_screen" :progress="0">
-        <MotrTrial
+        <AudioTrial
           :trial="trial"
           :index="i"
           :number="i + 1"
@@ -261,7 +261,7 @@
     <!-- 5. Main trials ----------------------------------------------------------- -->
     <template v-for="(trial, i) in mainTrials">
       <Screen :key="'trial-' + i" class="main_screen" :progress="i / mainTrials.length">
-        <MotrTrial
+        <AudioTrial
           :trial="trial"
           :index="practiceTrials.length + i"
           :number="i + 1"
@@ -317,7 +317,7 @@
 
 <script>
 import config from "./config";
-import MotrTrial from "./components/MotrTrial.vue";
+import AudioTrial from "./components/AudioTrial.vue";
 import BrowserCheck from "./components/BrowserCheck.vue";
 import { chooseListId, buildPracticeTrials, buildMainTrials } from "./materials";
 import { browserInfo } from "./browser";
@@ -386,7 +386,7 @@ function findWidestSentence(trials) {
 
 export default {
   name: "App",
-  components: { MotrTrial, BrowserCheck },
+  components: { AudioTrial, BrowserCheck },
   data() {
     const listId = chooseListId();
     const practiceTrials = buildPracticeTrials();
