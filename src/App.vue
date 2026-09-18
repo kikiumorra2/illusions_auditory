@@ -618,7 +618,8 @@ export default {
 
 .motr-demo-container {
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin: 20px 0;
 }
 
@@ -626,6 +627,5 @@ export default {
   width: 800px;
   max-width: 90vw;
   height: auto;
-  display: inline-block;
 }
 </style>
