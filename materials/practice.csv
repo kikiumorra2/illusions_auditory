@@ -1,5 +1,5 @@
-item_id,condition_id,text,question,options,correct
-1000,Practice,The personal assistant who the bodyguard of the delegate does not trust attracts great public attention.,Who attracted public attention?,The personal assistant|The bodyguard,The personal assistant
-1001,Practice,This is just a practice sentence.,Is this an official test sentence?,Yes|No,No
-1002,Practice,The priest who had privately advised the lawyer is accused of withholding information.,Why is the priest being accused?,not being totally honest|stealing money from the church,not being totally honest
-1003,Practice,"Over 10,000 species risk extinction in Amazon, says landmark report.",Is Amazon's ecosystem facing problems?,Yes|No,Yes
+item_id,condition_id,text,audio_file
+1,wh,Who were we recently talking with about this?,1_wh.mp3
+1,wh_fronted,Who were we recently talking about this with?,1_wh_fronted.mp3
+1,wh_inverted,Who were we recently talking about with this?,1_wh_inverted.mp3
+1,wh_fronted_inverted,Who were we recently talking with this about?,1_wh_fronted_inverted.mp3
