@@ -11,23 +11,27 @@
       </template>
     </div>
 
-    <!-- Hidden audio player -->
-    <audio
-      ref = "audio"
-      :src="audioSrc"
-      preload="auto"
-      @ended="onAudioEnded"
-    ></audio>
-
-    <!-- Play/Replay button -->
     <div class="audio-controls">
-      <button
-        :disabled = "isPlaying"
-        @click="playAudio"
-      >
-        {{ playCount === 0 ? "Play sentence" : "Replay sentence" }}
-      </button>
+      <audio
+        ref="audio"
+        :src="audioSrc"
+        controls
+        preload="auto"
+        @play="onAudioPlay"
+        @pause="onAudioPause"
+        @ended="onAudioEnded"
+      ></audio>
+    
+      <div class="replay-button">
+        <button
+          v-if="playCount > 0"
+          @click="replayAudio"
+        >
+          Replay from beginning
+        </button>
+      </div>
     </div>
+   
 
     <!-- Only show ratings once sentence has been heard completely once -->
     <div v-if="hasFinishedOnce" class="ratings">
@@ -152,30 +156,32 @@
   },
 
   methods: {
-    async playAudio() {
-      const audio = this.$refs.audio;
-
-      // Always begin from the start
-      audio.currentTime = 0;
-
-      try {
-        await audio.play();
-
-        this.playCount += 1;
-
-        // First play is not a replay
-        if (this.playCount > 1) {
-          this.replayCount += 1;
-        }
-
-        this.isPlaying = true;
-
-      } catch (error) {
-        console.error("Could not play audio:", error);
+    onAudioPlay() {
+      this.isPlaying = true;
+    
+      // Count the first time the audio is played
+      if (this.playCount === 0) {
+        this.playCount = 1;
       }
     },
-
-
+    
+    onAudioPause() {
+      this.isPlaying = false;
+    },
+    
+    replayAudio() {
+      const audio = this.$refs.audio;
+    
+      audio.currentTime = 0;
+    
+      this.playCount += 1;
+      this.replayCount += 1;
+    
+      audio.play().catch((error) => {
+        console.error("Could not replay audio:", error);
+      });
+    },
+    
     onAudioEnded() {
       this.isPlaying = false;
       this.hasFinishedOnce = true;
@@ -252,6 +258,15 @@
 
 .audio-controls {
   margin: 30px 0;
+}
+
+.audio-controls audio {
+  width: 100%;
+  max-width: 500px;
+}
+
+.replay-button {
+  margin-top: 15px;
 }
 
 .ratings {
