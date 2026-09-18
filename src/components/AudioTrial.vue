@@ -139,36 +139,44 @@
 
   data() {
     return {
-      // audio playback
+      // Ratings
+      grammarRating: null,
+      meaningRating: null,
+  
+      // Timing
+      trialStart: Date.now(),
+      doneListeningTime: null,
+  
+      // Audio playback
       playCount: 0,
       replayCount: 0,
       endReachedCount: 0,
       fullListenCount: 0,
-      
+  
       isPlaying: false,
       hasFinishedOnce: false,
       doneListening: false,
-      
-      // Was the previous playback sitting at the end?
+  
+      // Was audio sitting at the end?
       endedSinceLastPlay: false,
-      
+  
       // Current listening pass
       passActive: false,
       passStartedAtBeginning: false,
       passHadForwardSeek: false,
-      
+  
       // Precise playback-position tracking
       lastPlaybackTime: 0,
       playbackTracker: null,
-      
+  
       // One logical seek gesture
       seekGestureActive: false,
       seekFrom: null,
       seekTo: null,
       seekStartedAfterEnd: false,
       seekFinalizeTimer: null,
-      
-      // Recorded seeking behavior
+  
+      // Recorded seeking
       seekEvents: [],
       backwardSeekCount: 0,
       forwardSeekCount: 0,
@@ -225,21 +233,6 @@
     onAudioPause() {
       this.isPlaying = false;
       this.stopPlaybackTracker();
-    },
-    
-    //does not count as dragging
-    replayAudio() {
-      const audio = this.$refs.audio;
-    
-      this.programmaticSeek = true;
-      audio.currentTime = 0;
-    
-      this.playCount += 1;
-      this.replayCount += 1;
-    
-      audio.play().catch((error) => {
-        console.error("Could not replay audio:", error);
-      });
     },
     
     onAudioEnded() {
@@ -371,7 +364,7 @@
     onTimeUpdate() {
       const audio = this.$refs.audio;
     
-      if (!this.isSeeking) {
+      if (audio && !this.seekGestureActive) {
         this.lastPlaybackTime = audio.currentTime;
       }
     },
