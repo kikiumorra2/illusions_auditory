@@ -55,14 +55,7 @@ function toTrial(row, phase) {
     item_id: String(row.item_id),
     condition_id: String(row.condition_id),
     text: String(row.text).trim(),
-    question: isBlank(row.question) ? null : String(row.question),
-    // options are pipe-separated in the CSV, e.g. "Yes|No"
-    options: isBlank(row.options)
-      ? null
-      : String(row.options)
-          .split("|")
-          .map((s) => s.trim()),
-    correct: isBlank(row.correct) ? null : String(row.correct),
+    audio_fie: row.audio_file,
     phase, // "practice" | "main"
     row, // the full original CSV row, in case you need extra columns
   };
