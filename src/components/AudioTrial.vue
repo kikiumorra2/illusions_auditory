@@ -20,6 +20,9 @@
         @play="onAudioPlay"
         @pause="onAudioPause"
         @ended="onAudioEnded"
+        @timeupdate="onTimeUpdate"
+        @seeking="onSeeking"
+        @seeked="onSeeked"
       ></audio>
     
       <div class="replay-button">
@@ -138,14 +141,25 @@
     return {
       playCount: 0,
       replayCount: 0,
-
+  
       isPlaying: false,
       hasFinishedOnce: false,
-
+  
       grammarRating: null,
       meaningRating: null,
-
+  
       trialStart: Date.now(),
+  
+      // seeking information
+      lastPlaybackTime: 0,
+      seekFrom: null,
+      isSeeking: false,
+  
+      backwardSeekCount: 0,
+      backwardSeekEvents: [],
+  
+      // lets us distinguish participant seeking from our Replay button
+      programmaticSeek: false,
     };
   },
 
@@ -169,9 +183,11 @@
       this.isPlaying = false;
     },
     
+    //does not count as dragging
     replayAudio() {
       const audio = this.$refs.audio;
     
+      this.programmaticSeek = true;
       audio.currentTime = 0;
     
       this.playCount += 1;
@@ -191,25 +207,28 @@
     finishTrial() {
       const row = {
         Experiment: config.experimentName,
-
+      
         Condition: this.trial.condition_id,
         ItemId: this.trial.item_id,
-
+      
         TrialId: this.index,
         TrialType: "audio_trial",
         Phase: this.trial.phase,
-
+      
         TrialText: this.trial.text,
         AudioFile: this.trial.audio_file,
-
+      
         grammarRating: this.grammarRating,
         meaningRating: this.meaningRating,
-
+      
         playCount: this.playCount,
         replayCount: this.replayCount,
-
+      
+        backwardSeekCount: this.backwardSeekCount,
+        backwardSeekEvents: JSON.stringify(this.backwardSeekEvents),
+      
         trialTime: Date.now() - this.trialStart,
-
+      
         ListId: this.listId,
       };
 
@@ -238,6 +257,60 @@
         rows,
         `audio trial ${this.trial.item_id}`
       ).catch(() => {});
+    },
+
+
+    //where participant is in audio currently
+    onTimeUpdate() {
+      const audio = this.$refs.audio;
+    
+      if (!this.isSeeking) {
+        this.lastPlaybackTime = audio.currentTime;
+      }
+    },
+    
+    //if participant starts dragging, where were they when they started
+    onSeeking() {
+      if (this.programmaticSeek) {
+        return;
+      }
+    
+      this.isSeeking = true;
+    
+      // Position before the participant moved the playhead
+      this.seekFrom = this.lastPlaybackTime;
+    },
+    
+    //when dragging, stores from and to times in audio recording
+    onSeeked() {
+      const audio = this.$refs.audio;
+    
+      if (this.programmaticSeek) {
+        this.programmaticSeek = false;
+        this.isSeeking = false;
+        this.lastPlaybackTime = audio.currentTime;
+        return;
+      }
+    
+      const from = this.seekFrom;
+      const to = audio.currentTime;
+    
+      // Only count actual backwards movements.
+      // The 0.1 prevents tiny browser timing differences from counting.
+      if (from !== null && to < from - 0.1) {
+        this.backwardSeekCount += 1;
+    
+        this.backwardSeekEvents.push({
+          from: Number(from.toFixed(3)),
+          to: Number(to.toFixed(3)),
+          amountBack: Number((from - to).toFixed(3)),
+          trialTime: Date.now() - this.trialStart,
+        });
+      }
+    
+      this.isSeeking = false;
+      this.seekFrom = null;
+      this.lastPlaybackTime = to;
     },
   },
 };
