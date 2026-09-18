@@ -205,9 +205,6 @@
     <!-- 3. Instructions ---------------------------------------------------------- -->
     <InstructionScreen title="Instructions">
       <p>
-
-        //can you add a sentence to the instruction screen after "...move your mouse over it", something like "Feel free to go back and re-read any part of the sentence at any point." 
-        //Maybe we could even bold this part? perhaps it's too on the nose for the behavior we're trying to elicit but it would be nice to get them to internalize that
         
         In this study, you will read sentences. Unlike in normal reading, however, the text
         will be blurred. To bring the text into focus, move your mouse over it. <b>Feel free to go back and re-read</b> any part of the sentence at any point.
