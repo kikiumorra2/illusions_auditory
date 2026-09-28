@@ -3,7 +3,7 @@
     
     <div class = "trial-counter">
       <template v-if="trial.phase === 'practice'">
-        Practice Sentece {{ number }}
+        Practice Sentence {{ number }}
       </template>
 
       <template v-else>
@@ -15,15 +15,40 @@
       <audio
         ref="audio"
         :src="audioSrc"
-        controls
-        preload="auto"
-        @play="onAudioPlay"
-        @pause="onAudioPause"
-        @ended="onAudioEnded"
+        preload="metadata"
+        @loadedmetadata="onLoadedMetadata"
         @timeupdate="onTimeUpdate"
-        @seeking="onSeeking"
-        @seeked="onSeeked"
+        @ended="onAudioEnded"
       ></audio>
+
+      <button @click="togglePlayback">
+        {{ isPlaying ? "Pause" : "Play" }}
+      </button>
+      
+    <div class="custom-audio-player">
+
+      <span>
+        {{ formatTime(displayTime) }}
+      </span>
+    
+      <input
+        type="range"
+        min="0"
+        :max="duration"
+        step="0.01"
+        :value="displayTime"
+        @pointerdown="startSeek"
+        @input="updateSeek"
+        @pointerup="finishSeek"
+        @change="finishSeek"
+        @pointercancel="cancelSeek"
+      >
+    
+      <span>
+        {{ formatTime(duration) }}
+      </span>
+    
+    </div>
     
       <div class="done-listening-button">
         <button
@@ -147,34 +172,30 @@
       trialStart: Date.now(),
       doneListeningTime: null,
   
-      // Audio playback
-      playCount: 0,
-      replayCount: 0,
-      endReachedCount: 0,
-      fullListenCount: 0,
+      // Audio position
+      duration: 0,
+      currentTime: 0,
   
+      // Playback
       isPlaying: false,
       hasFinishedOnce: false,
       doneListening: false,
   
-      // Was audio sitting at the end?
-      endedSinceLastPlay: false,
+      playCount: 0,
+      replayCount: 0,
+      endReachedCount: 0,
+      fullListenCount: 0,
   
       // Current listening pass
       passActive: false,
       passStartedAtBeginning: false,
       passHadForwardSeek: false,
   
-      // Precise playback-position tracking
-      lastPlaybackTime: 0,
-      playbackTracker: null,
-  
-      // One logical seek gesture
-      seekGestureActive: false,
+      // Custom seek slider
+      isDragging: false,
       seekFrom: null,
-      seekTo: null,
-      seekStartedAfterEnd: false,
-      seekFinalizeTimer: null,
+      seekPreview: 0,
+      wasPlayingBeforeSeek: false,
   
       // Recorded seeking
       seekEvents: [],
@@ -187,9 +208,31 @@
     audioSrc() {
       return `${process.env.BASE_URL}audio_files/${this.trial.audio_file}`;
     },
+  
+    displayTime() {
+      if (this.isDragging) {
+        return this.seekPreview;
+      }
+  
+      return this.currentTime;
+    },
   },
 
   methods: {
+    formatTime(seconds) {
+      if (!Number.isFinite(seconds)) {
+        return "0:00";
+      }
+  
+      const minutes = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+  
+      return `${minutes}:${String(secs).padStart(2, "0")}`;
+    },
+    
+    
+    
+    
     //makes doneListing --> true after pressing button
     finishListening() {
       const audio = this.$refs.audio;
@@ -203,48 +246,17 @@
       this.doneListening = true;
     },
     
-    onAudioPlay() {
-      const audio = this.$refs.audio;
+   
     
-      this.isPlaying = true;
-      this.playCount += 1;
-    
-      // If the audio had ended and Play restarted it from 0,
-      // count that as a replay, not a manual rewind.
-      if (this.endedSinceLastPlay) {
-        if (audio.currentTime <= 0.1) {
-          this.replayCount += 1;
-        }
-    
-        this.endedSinceLastPlay = false;
-      }
-    
-      // Start a new listening pass only if we are not already in one.
-      // Pause/resume should not create a new pass.
-      if (!this.passActive) {
-        this.passActive = true;
-        this.passStartedAtBeginning = audio.currentTime <= 0.1;
-        this.passHadForwardSeek = false;
-      }
-    
-      this.startPlaybackTracker();
-    },
-    
-    onAudioPause() {
-      this.isPlaying = false;
-      this.stopPlaybackTracker();
-    },
+   
     
     onAudioEnded() {
       this.isPlaying = false;
-      this.stopPlaybackTracker();
+      this.currentTime = this.duration;
     
       this.hasFinishedOnce = true;
-    
       this.endReachedCount += 1;
     
-      // A "full listen" means playback began at the beginning
-      // and did not skip forward over part of the recording.
       if (
         this.passActive &&
         this.passStartedAtBeginning &&
@@ -254,30 +266,11 @@
       }
     
       this.passActive = false;
-    
-      // Used to detect a later replay from the beginning.
-      this.endedSinceLastPlay = true;
     },
 
-    //records every 50 ms instead of timeUpdate so that even you go back a lot fast, it still records it
-    startPlaybackTracker() {
-      this.stopPlaybackTracker();
+   
     
-      this.playbackTracker = setInterval(() => {
-        const audio = this.$refs.audio;
-    
-        if (audio && !this.seekGestureActive) {
-          this.lastPlaybackTime = audio.currentTime;
-        }
-      }, 50);
-    },
-    
-    stopPlaybackTracker() {
-      if (this.playbackTracker !== null) {
-        clearInterval(this.playbackTracker);
-        this.playbackTracker = null;
-      }
-    },
+  
 
 
     finishTrial() {
@@ -359,111 +352,168 @@
       ).catch(() => {});
     },
 
+    onLoadedMetadata() {
+      const audio = this.$refs.audio;
+    
+      this.duration = audio.duration;
+      this.currentTime = audio.currentTime;
+    },
 
+    startSeek(event) {
+      const audio = this.$refs.audio;
+    
+      event.target.setPointerCapture(event.pointerId);
+    
+      this.isDragging = true;
+    
+      this.seekFrom = audio.currentTime;
+      this.seekPreview = audio.currentTime;
+    
+      this.wasPlayingBeforeSeek = !audio.paused;
+    
+      if (this.wasPlayingBeforeSeek) {
+        audio.pause();
+        this.isPlaying = false;
+      }
+    },
+
+    //doesn't record, just updates and makes one long seek instead of many small ones
+    updateSeek(event) {
+      this.seekPreview = Number(event.target.value);
+    },
+
+    finishSeek(event) {
+      // pointerup and change can both fire.
+      // Only process the first one.
+      if (!this.isDragging) {
+        return;
+      }
+    
+      const audio = this.$refs.audio;
+    
+      const from = this.seekFrom;
+      const to = Number(event.target.value);
+    
+      // Move the actual recording
+      audio.currentTime = to;
+      this.currentTime = to;
+    
+      const change = to - from;
+    
+      if (Math.abs(change) >= 0.01) {
+        const direction =
+          change < 0 ? "backward" : "forward";
+    
+        const eventData = {
+          from: Number(from.toFixed(3)),
+          to: Number(to.toFixed(3)),
+          direction: direction,
+          amount: Number(Math.abs(change).toFixed(3)),
+          trialTime: Date.now() - this.trialStart,
+        };
+    
+        this.seekEvents.push(eventData);
+    
+        if (direction === "backward") {
+          this.backwardSeekCount += 1;
+        } else {
+          this.forwardSeekCount += 1;
+    
+          // Forward skipping means this wasn't a complete listen
+          this.passHadForwardSeek = true;
+        }
+    
+        // Seeking back to beginning can start a complete listen
+        if (to <= 0.05) {
+          this.passActive = true;
+          this.passStartedAtBeginning = true;
+          this.passHadForwardSeek = false;
+        }
+      }
+    
+      this.isDragging = false;
+      this.seekFrom = null;
+      this.seekPreview = to;
+    
+      // Resume automatically if it was playing before the seek
+      if (this.wasPlayingBeforeSeek) {
+        audio.play()
+          .then(() => {
+            this.isPlaying = true;
+          })
+          .catch((error) => {
+            console.error("Could not resume audio:", error);
+          });
+      }
+    
+      this.wasPlayingBeforeSeek = false;
+    },
+    
+    cancelSeek() {
+      this.isDragging = false;
+      this.seekFrom = null;
+      this.wasPlayingBeforeSeek = false;
+    },
+    
+    async togglePlayback() {
+      const audio = this.$refs.audio;
+    
+      // PAUSE
+      if (this.isPlaying) {
+        audio.pause();
+        this.isPlaying = false;
+        return;
+      }
+    
+      // If audio has reached the end, Play means replay from beginning
+      if (
+        audio.ended ||
+        (
+          this.duration > 0 &&
+          audio.currentTime >= this.duration - 0.05
+        )
+      ) {
+        audio.currentTime = 0;
+        this.currentTime = 0;
+    
+        this.replayCount += 1;
+    
+        this.passActive = true;
+        this.passStartedAtBeginning = true;
+        this.passHadForwardSeek = false;
+      }
+    
+      // Otherwise start a new listening pass if needed
+      else if (!this.passActive) {
+        this.passActive = true;
+    
+        this.passStartedAtBeginning =
+          audio.currentTime <= 0.05;
+    
+        this.passHadForwardSeek = false;
+      }
+    
+      try {
+        await audio.play();
+    
+        this.isPlaying = true;
+        this.playCount += 1;
+    
+      } catch (error) {
+        console.error("Could not play audio:", error);
+      }
+    },
+
+    
     //where participant is in audio currently
     onTimeUpdate() {
       const audio = this.$refs.audio;
     
-      if (audio && !this.seekGestureActive) {
-        this.lastPlaybackTime = audio.currentTime;
+      if (!this.isDragging) {
+        this.currentTime = audio.currentTime;
       }
     },
     
-    //if participant starts dragging, where were they when they started
-    onSeeking() {
-      const audio = this.$refs.audio;
-    
-      // Beginning of ONE logical drag gesture
-      if (!this.seekGestureActive) {
-        this.seekGestureActive = true;
-    
-        this.seekFrom = this.lastPlaybackTime;
-    
-        // Remember whether the audio had already ended.
-        // This lets us recognize the browser automatically
-        // resetting end -> 0 when Replay is pressed.
-        this.seekStartedAfterEnd = this.endedSinceLastPlay;
-      }
-    
-      // During dragging this may update many times.
-      // We keep replacing it with the newest destination.
-      this.seekTo = audio.currentTime;
-    },
-    
-    //when dragging, stores from and to times in audio recording
-    onSeeked() {
-      const audio = this.$refs.audio;
-    
-      this.seekTo = audio.currentTime;
-    
-      // Browsers can fire many seek events while one slider drag
-      // is happening. Wait briefly to see whether more arrive.
-      clearTimeout(this.seekFinalizeTimer);
-    
-      this.seekFinalizeTimer = setTimeout(() => {
-        this.finalizeSeek();
-      }, 200);
-    },
-
-    //makes sure that one long seek back is not counted as many small ones -- like from 3.6 to 3.2, from 3.2 to 2.9, from 2.9 etc.
-    finalizeSeek() {
-      const from = this.seekFrom;
-      const to = this.seekTo;
-    
-      if (from !== null && to !== null) {
-    
-        // If the recording had ended and the browser automatically
-        // jumped from the end back to 0 when Play was pressed,
-        // do NOT count that as a manual seek.
-        const automaticReplayReset =
-          this.seekStartedAfterEnd &&
-          to <= 0.05;
-    
-        if (!automaticReplayReset) {
-          const change = to - from;
-    
-          // Ignore tiny timing noise
-          if (Math.abs(change) >= 0.1) {
-            const direction =
-              change < 0 ? "backward" : "forward";
-    
-            const event = {
-              from: Number(from.toFixed(3)),
-              to: Number(to.toFixed(3)),
-              direction: direction,
-              amount: Number(Math.abs(change).toFixed(3)),
-              trialTime: Date.now() - this.trialStart,
-            };
-    
-            this.seekEvents.push(event);
-    
-            if (direction === "backward") {
-              this.backwardSeekCount += 1;
-            } else {
-              this.forwardSeekCount += 1;
-              this.passHadForwardSeek = true;
-            }
-    
-            // If they seek all the way back to the beginning,
-            // a complete listen can begin from here.
-            if (to <= 0.1) {
-              this.passStartedAtBeginning = true;
-              this.passHadForwardSeek = false;
-            }
-          }
-        }
-      }
-    
-      this.seekGestureActive = false;
-      this.seekFrom = null;
-      this.seekTo = null;
-      this.seekStartedAfterEnd = false;
-    
-      if (this.$refs.audio) {
-        this.lastPlaybackTime =
-          this.$refs.audio.currentTime;
-      }
-    },
   },
 };
 </script>
@@ -483,15 +533,6 @@
 
 .audio-controls {
   margin: 30px 0;
-}
-
-.audio-controls audio {
-  width: 100%;
-  max-width: 500px;
-}
-
-.replay-button {
-  margin-top: 15px;
 }
 
 .ratings {
@@ -519,5 +560,25 @@
   display: flex;
   justify-content: space-between;
   font-size: 14px;
+}
+
+.custom-audio-player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  width: 100%;
+  max-width: 600px;
+
+  margin: 20px auto;
+}
+
+.custom-audio-player input[type="range"] {
+  flex: 1;
+}
+
+.done-listening-button {
+  margin-top: 20px;
 }
 </style>
