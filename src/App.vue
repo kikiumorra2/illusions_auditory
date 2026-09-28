@@ -187,53 +187,36 @@
   </div>
 </Screen>
 
-    <!-- 2. Browser check (zoom) -------------------------------------------------- -->
-    <Screen 
-      v-if="config.browserCheck.enabled" 
-      title="Before we start"
-      class="instructions"
-    >
-      <div class ="browser-check-text">
-        <BrowserCheck
-          :longest-sentence="longestSentence"
-          :sentence-font-size="sentenceFontSize"
-          @done="browserCheckDone"
-        />
-      </div>
-    </Screen>
 
     <!-- 3. Instructions ---------------------------------------------------------- -->
     <InstructionScreen title="Instructions">
       <p>
         
-        In this study, you will read sentences. Unlike in normal reading, however, the text
-        will be blurred. To bring the text into focus, move your mouse over it. <b>Feel free to go back and re-read</b> any part of the sentence at any point.
+        In this study, you will listen to some sentences. <b>Feel free to go back and re-listen to any part of the sentence</b> by dragging the audio player.
+        You can drag it backward or forward as you wish.
         Take as much time as you need on any sentence — there is no rush! 
         When you are done reading, click the <b>Done Reading</b> button.
       </p>
-
-      <p>
-        Here is a short demonstration video:
-      </p>
-
-      <div class="motr-demo-container">
-         <video
-          class="motr-demo-video"
-          :src="motrDemo"
-          autoplay
-          muted
-          loop
-          playsinline
-          controls
-        >
-          Your browser does not support the video element.
-        </video>
       </div>
 
       
+       <p>
+        After listening to each sentence, you will be asked two questions about it.
+      </p>
+      
       <p>
-        After each sentence you will be asked a question about it. Indicate your answer by
-        clicking the appropriate option, then click <b>Next</b>.
+        The first question asks how grammatically well-formed the sentence sounds to you. 
+        For the first rating, judge only whether the sentence could be a grammatically well-formed sentence of English. 
+        Ignore whether the situation it describes is strange, unlikely, or unrealistic.
+      </p>
+
+      <p>
+        The second question asks how plausible the situation that is described in the sentence is. 
+        Judge how normal or plausible the situation the sentence describes would be in the real world.
+      </p>
+
+      <p>
+        Indicate your answers by clicking the appropriate option, then click <b>Next</b>.
       </p>
       <p v-if="practiceTrials.length">We will start with a few practice sentences.</p>
     </InstructionScreen>
