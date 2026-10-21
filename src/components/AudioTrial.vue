@@ -66,7 +66,7 @@
 
       <div class="rating-question">
         <p>
-          <b>How grammatically well-formed does this sentence sound to you?</b>
+          <b>How grammatically correct does this sentence sound to you?</b>
         </p>
 
         <div class="scale-labels">
