@@ -205,14 +205,14 @@
       </p>
       
       <p>
-        The first question asks how grammatically well-formed the sentence sounds to you. 
-        For the first rating, judge only whether the sentence could be a grammatically well-formed sentence of English. 
-        Ignore whether the situation it describes is strange, unlikely, or unrealistic.
+        The first question asks how grammatically correct the sentence sounds to you. 
+        For this rating, judge only whether the sentence could be a grammatically correct sentence in English -- 
+        ignore whether the situation it describes is strange, unlikely, or unrealistic.
       </p>
 
       <p>
         The second question asks how plausible the situation that is described in the sentence is. 
-        Judge how normal or plausible the situation the sentence describes would be in the real world.
+        Judge how normal or plausible the situation the sentence describes would be in the real world, regardless of how grammatical the sentence sounds.
       </p>
 
       <p>
