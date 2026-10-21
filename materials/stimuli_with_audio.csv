@@ -1,0 +1,9 @@
+item,sentence,condition,grammaticality,audio_file,duration_seconds
+1,Who were we recently talking with about this?,wh,G,audio/item1_wh.wav,2.85
+1,Who were we recently talking about this with?,wh_fronted,G,audio/item1_wh_fronted.wav,2.925
+1,Who were we recently talking about with this?,wh_fronted_inverted,V,audio/item1_wh_fronted_inverted.wav,2.825
+1,Who were we recently talking with this about?,wh_inverted,V,audio/item1_wh_inverted.wav,2.8
+1,Were we recently talking with him about this?,aux,G,audio/item1_aux.wav,2.875
+1,Were we recently talking about this with him?,aux_fronted,G,audio/item1_aux_fronted.wav,2.8
+1,Were we recently talking about him with this?,aux_fronted_inverted,V,audio/item1_aux_fronted_inverted.wav,2.825
+1,Were we recently talking with this about him?,aux_inverted,V,audio/item1_aux_inverted.wav,2.825

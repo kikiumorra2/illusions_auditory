@@ -20,3 +20,23 @@ npm run serve
 
 to analyze data: 
 python3 postprocessing/run_pipeline.py --experiment-id 345 --csv results/raw/results_lusha_attempt.csv --char-events expand
+
+
+Illusion audio:
+
+add 250ms of silence before audio onset, this should be consistent across all items
+add 300ms of silence after the end, this can have a little more leeway.
+
+cut audio using this: https://audio.pi7.org/audio-cutter
+
+text to speech website: https://luvvoice.com/
+
+
+
+
+Oct 21:
+    - trying new text to speech generator: https://github.com/hexgrad/kokoro
+    - in illusions_kokoro folder
+    - in kokorovenv
+    - to generate one audio file, ran python3 basic_cell.py
+    - to listen to generated .wav file, run xdg-open 0.wav
