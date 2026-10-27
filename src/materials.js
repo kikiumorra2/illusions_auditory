@@ -71,10 +71,22 @@ export function buildPracticeTrials() {
  * mixed with the remaining fillers (shuffled if config.shuffleTrials).
  */
 export function buildMainTrials(listId) {
-  const items = lists[listId].map((r) => toTrial(r, "main"));
-  const fillers = fillerRows.map((r) => toTrial(r, "main"));
-  const leading = fillers.splice(0, config.nLeadingFillers);
-  let rest = items.concat(fillers);
-  if (config.shuffleTrials) rest = _.shuffle(rest);
-  return leading.concat(rest);
+    const items = lists[listId].map((r) => toTrial(r, "main"));
+
+    // Randomly select the requested number of fillers
+    const fillers = _.shuffle(fillerRows)
+        .slice(0, config.nFillers)
+        .map((r) => toTrial(r, "main"));
+
+    // Put some fillers at the beginning
+    const leading = fillers.splice(0, config.nLeadingFillers);
+
+    // Combine the remaining trials
+    let rest = items.concat(fillers);
+
+    if (config.shuffleTrials) {
+        rest = _.shuffle(rest);
+    }
+
+    return leading.concat(rest);
 }
