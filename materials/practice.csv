@@ -1,9 +1,3 @@
 item_id,text,condition_id,grammaticality,audio_file,duration
-1,wh,Who were we recently talking with about this?,G,audio/item1_wh.wav,2.85
-1,wh_fronted,Who were we recently talking about this with?,G,audio/item1_wh_fronted.wav,2.925
-1,wh_fronted_inverted,Who were we recently talking about with this?,V,audio/item1_wh_fronted_inverted.wav,2.825
-1,wh_inverted,Who were we recently talking with this about?,V,audio/item1_wh_inverted.wav,2.8
-1,aux,Were we recently talking with him about this?,G,audio/item1_aux.wav,2.875
-1,aux_fronted,Were we recently talking about this with him?,G,audio/item1_aux_fronted.wav,2.8
-1,aux_fronted_inverted,Were we recently talking about him with this?,V,audio/item1_aux_fronted_inverted.wav,2.825
-1,aux_inverted,Were we recently talking with this about him?,V,audio/item1_aux_inverted.wav,2.825
+73,"There are now rumblings that Apple might soon invade the smart watch space, though the company is maintaining its customary silence.",filler,G,audio/item73_filler.wav,8.025
+74,"A bill was drafted and introduced into Parliament several times but met with great opposition, mostly from farmers.",filler,G,audio/item74_filler.wav,7.725
