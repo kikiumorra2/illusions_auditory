@@ -21,6 +21,8 @@ export default {
   // Number of fillers (taken from the top of materials/fillers.csv) that are always shown
   // first, unshuffled, so participants warm up on easy sentences.
   nLeadingFillers: 1,
+  //total number of fillers
+  nFillers = 27,
 
   // Shuffle the critical items and remaining fillers.
   shuffleTrials: true,
