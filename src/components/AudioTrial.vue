@@ -206,7 +206,7 @@
 
   computed: {
     audioSrc() {
-      return `${process.env.BASE_URL}audio/${this.trial.audio_file}`;
+      return `${process.env.BASE_URL}${this.trial.audio_file}`;
     },
   
     displayTime() {
