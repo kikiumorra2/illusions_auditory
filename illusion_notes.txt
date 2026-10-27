@@ -43,4 +43,6 @@ Oct 21:
     
     
 Oct 27:
-    - 
+    - made 27 items, fillers from sap benchmark audios
+    - need to do: make the lists and make experiment actually work
+    
