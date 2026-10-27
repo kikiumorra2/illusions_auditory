@@ -1,2 +1,28 @@
-item_id,condition_id,text,audio_file
-1,aux_inverted,Were we recently talking about him with this?,1_aux_inverted.mp3
+item_id,text,condition_id,grammaticality,audio_file,duration
+1,Were we recently talking about him with this?,aux_fronted_inverted,V,audio/item1_aux_fronted_inverted.wav,2.825
+2,Did you come up with the bathroom in the proof?,aux_inverted,V,audio/item2_aux_inverted.wav,2.7
+3,Who did you talk to about the problem?,wh,G,audio/item3_wh.wav,2.475
+4,Who did you argue over the bill with?,wh_fronted,G,audio/item4_wh_fronted.wav,2.4
+5,Who did you apologize for to the mistake?,wh_fronted_inverted,V,audio/item5_wh_fronted_inverted.wav,2.7
+6,What are you going to dress up as Halloween for?,wh_inverted,V,audio/item6_wh_inverted.wav,2.7
+7,Were you talking to him on the phone?,aux,G,audio/item7_aux.wav,2.3
+8,Are you sad in life about something?,aux_fronted,G,audio/item8_aux_fronted.wav,2.4
+9,Do you dream at it about night?,aux_fronted_inverted,V,audio/item9_aux_fronted_inverted.wav,2.125
+10,Did you give that book to Christmas for her?,aux_inverted,V,audio/item10_aux_inverted.wav,2.725
+11,What did the manager meet with investors about?,wh,G,audio/item11_wh.wav,3.0
+12,Who did you travel during the break with?,wh_fronted,G,audio/item12_wh_fronted.wav,2.475
+13,What were you collaborating with on your friend?,wh_fronted_inverted,V,audio/item13_wh_fronted_inverted.wav,2.575
+14,What were you debating about them with?,wh_inverted,V,audio/item14_wh_inverted.wav,2.35
+15,Are you traveling until Sunday with John?,aux,G,audio/item15_aux.wav,2.875
+16,Is she playing in the treehouse with a doll?,aux_fronted,G,audio/item16_aux_fronted.wav,2.575
+17,Was she listening until Mitski to midnight?,aux_fronted_inverted,V,audio/item17_aux_fronted_inverted.wav,3.025
+18,Are dogs better at cats than running?,aux_inverted,V,audio/item18_aux_inverted.wav,2.475
+19,Where did you decide to go to with her?,wh,G,audio/item19_wh.wav,2.45
+20,Who did Alice talk after dinner to?,wh_fronted,G,audio/item20_wh_fronted.wav,2.45
+21,What did the bus collide during with the storm?,wh_fronted_inverted,V,audio/item21_wh_fronted_inverted.wav,2.7
+22,What were you searching for the lecture during?,wh_inverted,V,audio/item22_wh_inverted.wav,2.5
+23,Was the actor laughing at someone in this scene?,aux,G,audio/item23_aux.wav,2.8
+24,Were you waiting outside the restaurant for me?,aux_fronted,G,audio/item24_aux_fronted.wav,2.775
+25,Did you consult about the doctor with the diagnosis?,aux_fronted_inverted,V,audio/item25_aux_fronted_inverted.wav,3.475
+26,Did Emma confide in her divorce about her therapist?,aux_inverted,V,audio/item26_aux_inverted.wav,3.625
+27,What did the student interfere with during the experiment?,wh,G,audio/item27_wh.wav,3.275

@@ -1,2 +1,28 @@
-item_id,condition_id,text,audio_file
-1,wh_inverted,Who were we recently talking about with this?,1_wh_inverted.mp3
+item_id,text,condition_id,grammaticality,audio_file,duration
+1,Who were we recently talking about with this?,wh_fronted_inverted,V,audio/item1_wh_fronted_inverted.wav,2.825
+2,What did you come up with the bathroom in?,wh_inverted,V,audio/item2_wh_inverted.wav,2.375
+3,Did you talk to your dad about the problem?,aux,G,audio/item3_aux.wav,2.65
+4,Did you argue over the bill with your roommate?,aux_fronted,G,audio/item4_aux_fronted.wav,2.8
+5,Did you apologize for your boss to the mistake?,aux_fronted_inverted,V,audio/item5_aux_fronted_inverted.wav,3.0
+6,Are you going to dress up as Halloween for something?,aux_inverted,V,audio/item6_aux_inverted.wav,3.1
+7,Who were you talking to on the phone?,wh,G,audio/item7_wh.wav,2.375
+8,What are you sad in life about?,wh_fronted,G,audio/item8_wh_fronted.wav,2.05
+9,What do you dream at about night?,wh_fronted_inverted,V,audio/item9_wh_fronted_inverted.wav,2.15
+10,Who did you give that book to Christmas for?,wh_inverted,V,audio/item10_wh_inverted.wav,2.775
+11,Did the manager meet with investors about a merger?,aux,G,audio/item11_aux.wav,3.425
+12,Did you travel during the break with your sister?,aux_fronted,G,audio/item12_aux_fronted.wav,2.95
+13,Did you collaborate with the project on your friend?,aux_fronted_inverted,V,audio/item13_aux_fronted_inverted.wav,3.075
+14,Were you debating about them with it?,aux_inverted,V,audio/item14_aux_inverted.wav,2.4
+15,When are you traveling until with John?,wh,G,audio/item15_wh.wav,2.45
+16,What is she playing in the treehouse with?,wh_fronted,G,audio/item16_wh_fronted.wav,2.4
+17,What was she listening until to midnight?,wh_fronted_inverted,V,audio/item17_wh_fronted_inverted.wav,2.675
+18,What are dogs better at cats than?,wh_inverted,V,audio/item18_wh_inverted.wav,2.275
+19,Did you decide to go to the park with her?,aux,G,audio/item19_aux.wav,2.625
+20,Did Alice talk after dinner to her crush?,aux_fronted,G,audio/item20_aux_fronted.wav,2.725
+21,Did the bus collide during something with the storm?,aux_fronted_inverted,V,audio/item21_aux_fronted_inverted.wav,2.925
+22,Were you searching for the lecture during your notes?,aux_inverted,V,audio/item22_aux_inverted.wav,2.875
+23,Who was the actor laughing at in this scene?,wh,G,audio/item23_wh.wav,2.675
+24,Who were you waiting outside the restaurant for?,wh_fronted,G,audio/item24_wh_fronted.wav,2.775
+25,Who did you consult about with the diagnosis?,wh_fronted_inverted,V,audio/item25_wh_fronted_inverted.wav,3.2
+26,Who did Emma confide in her divorce about?,wh_inverted,V,audio/item26_wh_inverted.wav,3.0
+27,Did the student interfere with his equipment during the experiment?,aux,G,audio/item27_aux.wav,3.9
