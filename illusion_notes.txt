@@ -45,4 +45,11 @@ Oct 21:
 Oct 27:
     - made 27 items, fillers from sap benchmark audios
     - need to do: make the lists and make experiment actually work
-    
+    - notes on pronunciation:
+        "there are now rumblings that apple might invade the smarth watch space ..."
+        it puts the emphasis wrong, it says smart (adj) watch(noun) space instead of (smart watch)(noun) space
+        
+        "who were you waiting for outside the restaurant?"
+        who were you waiting FER outside the RESTRENT
+        
+        
