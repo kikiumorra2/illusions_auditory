@@ -40,3 +40,7 @@ Oct 21:
     - in kokorovenv
     - to generate one audio file, ran python3 basic_cell.py
     - to listen to generated .wav file, run xdg-open 0.wav
+    
+    
+Oct 27:
+    - 

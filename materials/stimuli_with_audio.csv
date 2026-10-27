@@ -1,4 +1,4 @@
-item,sentence,condition,grammaticality,audio_file,duration_seconds
+item_id,text,condition_id,grammaticality,audio_file,duration
 1,Who were we recently talking with about this?,wh,G,audio/item1_wh.wav,2.85
 1,Who were we recently talking about this with?,wh_fronted,G,audio/item1_wh_fronted.wav,2.925
 1,Who were we recently talking about with this?,wh_fronted_inverted,V,audio/item1_wh_fronted_inverted.wav,2.825
@@ -7,3 +7,211 @@ item,sentence,condition,grammaticality,audio_file,duration_seconds
 1,Were we recently talking about this with him?,aux_fronted,G,audio/item1_aux_fronted.wav,2.8
 1,Were we recently talking about him with this?,aux_fronted_inverted,V,audio/item1_aux_fronted_inverted.wav,2.825
 1,Were we recently talking with this about him?,aux_inverted,V,audio/item1_aux_inverted.wav,2.825
+2,What did you come up with in the bathroom?,wh,G,audio/item2_wh.wav,2.325
+2,What did you come up in the bathroom with?,wh_fronted,G,audio/item2_wh_fronted.wav,2.4
+2,What did you come up in with the bathroom?,wh_fronted_inverted,V,audio/item2_wh_fronted_inverted.wav,2.375
+2,What did you come up with the bathroom in?,wh_inverted,V,audio/item2_wh_inverted.wav,2.375
+2,Did you come up with the proof in the bathroom?,aux,G,audio/item2_aux.wav,2.725
+2,Did you come up in the bathroom with the proof?,aux_fronted,G,audio/item2_aux_fronted.wav,2.7
+2,Did you come up in the proof with the bathroom?,aux_fronted_inverted,V,audio/item2_aux_fronted_inverted.wav,2.6
+2,Did you come up with the bathroom in the proof?,aux_inverted,V,audio/item2_aux_inverted.wav,2.7
+3,Who did you talk to about the problem?,wh,G,audio/item3_wh.wav,2.475
+3,Who did you talk about the problem to?,wh_fronted,G,audio/item3_wh_fronted.wav,2.55
+3,Who did you talk about to the problem?,wh_fronted_inverted,V,audio/item3_wh_fronted_inverted.wav,2.425
+3,Who did you talk to the problem about?,wh_inverted,V,audio/item3_wh_inverted.wav,2.5
+3,Did you talk to your dad about the problem?,aux,G,audio/item3_aux.wav,2.65
+3,Did you talk about the problem to your dad?,aux_fronted,G,audio/item3_aux_fronted.wav,2.65
+3,Did you talk about your dad to the problem?,aux_fronted_inverted,V,audio/item3_aux_fronted_inverted.wav,2.625
+3,Did you talk to the problem about your dad?,aux_inverted,V,audio/item3_aux_inverted.wav,2.725
+4,Who did you argue with over the bill?,wh,G,audio/item4_wh.wav,2.35
+4,Who did you argue over the bill with?,wh_fronted,G,audio/item4_wh_fronted.wav,2.4
+4,Who did you argue over with the bill?,wh_fronted_inverted,V,audio/item4_wh_fronted_inverted.wav,2.35
+4,Who did you argue with the bill over?,wh_inverted,V,audio/item4_wh_inverted.wav,2.475
+4,Did you argue with your roommate over the bill?,aux,G,audio/item4_aux.wav,2.825
+4,Did you argue over the bill with your roommate?,aux_fronted,G,audio/item4_aux_fronted.wav,2.8
+4,Did you argue over your roommate with the bill?,aux_fronted_inverted,V,audio/item4_aux_fronted_inverted.wav,2.775
+4,Did you argue with the bill over your roommate?,aux_inverted,V,audio/item4_aux_inverted.wav,2.825
+5,Who did you apologize to for the mistake?,wh,G,audio/item5_wh.wav,2.725
+5,Who did you apologize for the mistake to?,wh_fronted,G,audio/item5_wh_fronted.wav,2.775
+5,Who did you apologize for to the mistake?,wh_fronted_inverted,V,audio/item5_wh_fronted_inverted.wav,2.7
+5,Who did you apologize to the mistake for?,wh_inverted,V,audio/item5_wh_inverted.wav,2.8
+5,Did you apologize to your boss for the mistake?,aux,G,audio/item5_aux.wav,2.925
+5,Did you apologize for the mistake to your boss?,aux_fronted,G,audio/item5_aux_fronted.wav,2.975
+5,Did you apologize for your boss to the mistake?,aux_fronted_inverted,V,audio/item5_aux_fronted_inverted.wav,3.0
+5,Did you apologize to the mistake for your boss?,aux_inverted,V,audio/item5_aux_inverted.wav,2.9
+6,What are you going to dress up as for Halloween?,wh,G,audio/item6_wh.wav,2.7
+6,What are you going to dress up for Halloween as?,wh_fronted,G,audio/item6_wh_fronted.wav,2.7
+6,What are you going to dress up for as Halloween?,wh_fronted_inverted,V,audio/item6_wh_fronted_inverted.wav,2.6
+6,What are you going to dress up as Halloween for?,wh_inverted,V,audio/item6_wh_inverted.wav,2.7
+6,Are you going to dress up as something for Halloween?,aux,G,audio/item6_aux.wav,3.075
+6,Are you going to dress up for Halloween as something?,aux_fronted,G,audio/item6_aux_fronted.wav,2.975
+6,Are you going to dress up for something as Halloween?,aux_fronted_inverted,V,audio/item6_aux_fronted_inverted.wav,2.875
+6,Are you going to dress up as Halloween for something?,aux_inverted,V,audio/item6_aux_inverted.wav,3.1
+7,Who were you talking to on the phone?,wh,G,audio/item7_wh.wav,2.375
+7,Who were you talking on the phone to?,wh_fronted,G,audio/item7_wh_fronted.wav,2.3
+7,Who were you talking on to the phone?,wh_fronted_inverted,V,audio/item7_wh_fronted_inverted.wav,2.325
+7,Who were you talking to the phone on?,wh_inverted,V,audio/item7_wh_inverted.wav,2.4
+7,Were you talking to him on the phone?,aux,G,audio/item7_aux.wav,2.3
+7,Were you talking on the phone to him?,aux_fronted,G,audio/item7_aux_fronted.wav,2.375
+7,Were you talking on him to the phone?,aux_fronted_inverted,V,audio/item7_aux_fronted_inverted.wav,2.325
+7,Were you talking to the phone on him?,aux_inverted,V,audio/item7_aux_inverted.wav,2.375
+8,What are you sad about in life?,wh,G,audio/item8_wh.wav,2.025
+8,What are you sad in life about?,wh_fronted,G,audio/item8_wh_fronted.wav,2.05
+8,What are you sad in about life?,wh_fronted_inverted,V,audio/item8_wh_fronted_inverted.wav,2.05
+8,What are you sad about life in?,wh_inverted,V,audio/item8_wh_inverted.wav,2.125
+8,Are you sad about something in life?,aux,G,audio/item8_aux.wav,2.275
+8,Are you sad in life about something?,aux_fronted,G,audio/item8_aux_fronted.wav,2.4
+8,Are you sad in something about life?,aux_fronted_inverted,V,audio/item8_aux_fronted_inverted.wav,2.375
+8,Are you sad about life in something?,aux_inverted,V,audio/item8_aux_inverted.wav,2.4
+9,What do you dream about at night?,wh,G,audio/item9_wh.wav,2.0
+9,What do you dream at night about?,wh_fronted,G,audio/item9_wh_fronted.wav,1.975
+9,What do you dream at about night?,wh_fronted_inverted,V,audio/item9_wh_fronted_inverted.wav,2.15
+9,What do you dream about night at?,wh_inverted,V,audio/item9_wh_inverted.wav,2.075
+9,Do you dream about it at night?,aux,G,audio/item9_aux.wav,1.95
+9,Do you dream at night about it?,aux_fronted,G,audio/item9_aux_fronted.wav,2.05
+9,Do you dream at it about night?,aux_fronted_inverted,V,audio/item9_aux_fronted_inverted.wav,2.125
+9,Do you dream about night at it?,aux_inverted,V,audio/item9_aux_inverted.wav,2.1
+10,Who did you give that book to for Christmas?,wh,G,audio/item10_wh.wav,2.675
+10,Who did you give that book for Christmas to?,wh_fronted,G,audio/item10_wh_fronted.wav,2.775
+10,Who did you give that book for to Christmas?,wh_fronted_inverted,V,audio/item10_wh_fronted_inverted.wav,2.7
+10,Who did you give that book to Christmas for?,wh_inverted,V,audio/item10_wh_inverted.wav,2.775
+10,Did you give that book to her for Christmas?,aux,G,audio/item10_aux.wav,2.725
+10,Did you give that book for Christmas to her?,aux_fronted,G,audio/item10_aux_fronted.wav,2.675
+10,Did you give that book for her to Christmas?,aux_fronted_inverted,V,audio/item10_aux_fronted_inverted.wav,2.7
+10,Did you give that book to Christmas for her?,aux_inverted,V,audio/item10_aux_inverted.wav,2.725
+11,What did the manager meet with investors about?,wh,G,audio/item11_wh.wav,3.0
+11,What did the manager meet about with inverstors?,wh_fronted,G,audio/item11_wh_fronted.wav,3.125
+11,What did the manager meet with about investors?,wh_fronted_inverted,V,audio/item11_wh_fronted_inverted.wav,3.075
+11,What did the manager meet about investors with?,wh_inverted,V,audio/item11_wh_inverted.wav,3.075
+11,Did the manager meet with investors about a merger?,aux,G,audio/item11_aux.wav,3.425
+11,Did the manager meet about a merger with investors?,aux_fronted,G,audio/item11_aux_fronted.wav,3.425
+11,Did the manager meet about investors with a merger?,aux_fronted_inverted,V,audio/item11_aux_fronted_inverted.wav,3.45
+11,Did the manager meet with a merger about investors?,aux_inverted,V,audio/item11_aux_inverted.wav,3.55
+12,Who did you travel with during the break?,wh,G,audio/item12_wh.wav,2.55
+12,Who did you travel during the break with?,wh_fronted,G,audio/item12_wh_fronted.wav,2.475
+12,Who did you travel during with the break?,wh_fronted_inverted,V,audio/item12_wh_fronted_inverted.wav,2.575
+12,Who did you travel with the break during?,wh_inverted,V,audio/item12_wh_inverted.wav,2.45
+12,Did you travel with your sister during the break?,aux,G,audio/item12_aux.wav,2.925
+12,Did you travel during the break with your sister?,aux_fronted,G,audio/item12_aux_fronted.wav,2.95
+12,Did you travel during your sister with the break?,aux_fronted_inverted,V,audio/item12_aux_fronted_inverted.wav,2.975
+12,Did you travel with the break during your sister?,aux_inverted,V,audio/item12_aux_inverted.wav,2.925
+13,What were you collaborating on with your friend?,wh,G,audio/item13_wh.wav,2.675
+13,What were you collaborating with your friend on?,wh_fronted,G,audio/item13_wh_fronted.wav,2.65
+13,What were you collaborating with on your friend?,wh_fronted_inverted,V,audio/item13_wh_fronted_inverted.wav,2.575
+13,What were you collaborating on your friend with?,wh_inverted,V,audio/item13_wh_inverted.wav,2.625
+13,Did you collaborate on the project with your friend?,aux,G,audio/item13_aux.wav,3.075
+13,Did you collaborate with your friend on the project?,aux_fronted,G,audio/item13_aux_fronted.wav,3.025
+13,Did you collaborate with the project on your friend?,aux_fronted_inverted,V,audio/item13_aux_fronted_inverted.wav,3.075
+13,Did you collaborate on your friend with the project?,aux_inverted,V,audio/item13_aux_inverted.wav,3.075
+14,What were you debating about with them?,wh,G,audio/item14_wh.wav,2.325
+14,What were you debating with them about?,wh_fronted,G,audio/item14_wh_fronted.wav,2.325
+14,What were you debating with about them?,wh_fronted_inverted,V,audio/item14_wh_fronted_inverted.wav,2.3
+14,What were you debating about them with?,wh_inverted,V,audio/item14_wh_inverted.wav,2.35
+14,Were you debating about it with them?,aux,G,audio/item14_aux.wav,2.375
+14,Were you debating with them about it?,aux_fronted,G,audio/item14_aux_fronted.wav,2.325
+14,Were you debating with it about them?,aux_fronted_inverted,V,audio/item14_aux_fronted_inverted.wav,2.375
+14,Were you debating about them with it?,aux_inverted,V,audio/item14_aux_inverted.wav,2.4
+15,When are you traveling until with John?,wh,G,audio/item15_wh.wav,2.45
+15,When are you traveling with John until?,wh_fronted,G,audio/item15_wh_fronted.wav,2.55
+15,When are you traveling with until John?,wh_fronted_inverted,V,audio/item15_wh_fronted_inverted.wav,2.5
+15,When are you traveling until John with?,wh_inverted,V,audio/item15_wh_inverted.wav,2.5
+15,Are you traveling until Sunday with John?,aux,G,audio/item15_aux.wav,2.875
+15,Are you traveling with John until Sunday?,aux_fronted,G,audio/item15_aux_fronted.wav,2.725
+15,Are you traveling with Sunday until John?,aux_fronted_inverted,V,audio/item15_aux_fronted_inverted.wav,2.75
+15,Are you traveling until John with Sunday?,aux_inverted,V,audio/item15_aux_inverted.wav,2.9
+16,What is she playing with in the treehouse?,wh,G,audio/item16_wh.wav,2.325
+16,What is she playing in the treehouse with?,wh_fronted,G,audio/item16_wh_fronted.wav,2.4
+16,What is she playing in with the treehouse?,wh_fronted_inverted,V,audio/item16_wh_fronted_inverted.wav,2.325
+16,What is she playing with the treehouse in?,wh_inverted,V,audio/item16_wh_inverted.wav,2.4
+16,Is she playing with a doll in the treehouse?,aux,G,audio/item16_aux.wav,2.675
+16,Is she playing in the treehouse with a doll?,aux_fronted,G,audio/item16_aux_fronted.wav,2.575
+16,Is she playing in a doll with the treehouse?,aux_fronted_inverted,V,audio/item16_aux_fronted_inverted.wav,2.6
+16,Is she playing with the treehouse in a doll?,aux_inverted,V,audio/item16_aux_inverted.wav,2.55
+17,What was she listening to until midnight?,wh,G,audio/item17_wh.wav,2.4
+17,What was she listening until midnight to?,wh_fronted,G,audio/item17_wh_fronted.wav,2.75
+17,What was she listening until to midnight?,wh_fronted_inverted,V,audio/item17_wh_fronted_inverted.wav,2.675
+17,What was she listening to midnight until?,wh_inverted,V,audio/item17_wh_inverted.wav,2.5
+17,Was she listening to Mitski until midnight?,aux,G,audio/item17_aux.wav,2.85
+17,Was she listening until midnight to Mitski?,aux_fronted,G,audio/item17_aux_fronted.wav,3.05
+17,Was she listening until Mitski to midnight?,aux_fronted_inverted,V,audio/item17_aux_fronted_inverted.wav,3.025
+17,Was she listening to midnight unil Mitski?,aux_inverted,V,audio/item17_aux_inverted.wav,2.8
+18,What are dogs better at than cats?,wh,G,audio/item18_wh.wav,2.35
+18,What are dogs better than cats at?,wh_fronted,G,audio/item18_wh_fronted.wav,2.275
+18,What are dogs better than at cats?,wh_fronted_inverted,V,audio/item18_wh_fronted_inverted.wav,2.25
+18,What are dogs better at cats than?,wh_inverted,V,audio/item18_wh_inverted.wav,2.275
+18,Are dogs better at running than cats?,aux,G,audio/item18_aux.wav,2.475
+18,Are dogs better than cats at running?,aux_fronted,G,audio/item18_aux_fronted.wav,2.5
+18,Are dogs better than running at cats?,aux_fronted_inverted,V,audio/item18_aux_fronted_inverted.wav,2.45
+18,Are dogs better at cats than running?,aux_inverted,V,audio/item18_aux_inverted.wav,2.475
+19,Where did you decide to go to with her?,wh,G,audio/item19_wh.wav,2.45
+19,Where did you decide to go with her to?,wh_fronted,G,audio/item19_wh_fronted.wav,2.45
+19,Where did you decide to go with to her?,wh_fronted_inverted,V,audio/item19_wh_fronted_inverted.wav,2.425
+19,Where did you decide to go to her with?,wh_inverted,V,audio/item19_wh_inverted.wav,2.4
+19,Did you decide to go to the park with her?,aux,G,audio/item19_aux.wav,2.625
+19,Did you decide to go with her to the park?,aux_fronted,G,audio/item19_aux_fronted.wav,2.6
+19,Did you decide to go with the park to her?,aux_fronted_inverted,V,audio/item19_aux_fronted_inverted.wav,2.675
+19,Did you decide to go to her with the park?,aux_inverted,V,audio/item19_aux_inverted.wav,2.625
+20,Who did Alice talk to after dinner?,wh,G,audio/item20_wh.wav,2.4
+20,Who did Alice talk after dinner to?,wh_fronted,G,audio/item20_wh_fronted.wav,2.45
+20,Who did Alice talk after to dinner?,wh_fronted_inverted,V,audio/item20_wh_fronted_inverted.wav,2.425
+20,Who did Alice talk to dinner after?,wh_inverted,V,audio/item20_wh_inverted.wav,2.425
+20,Did Alice talk to her crush after dinner?,aux,G,audio/item20_aux.wav,2.7
+20,Did Alice talk after dinner to her crush?,aux_fronted,G,audio/item20_aux_fronted.wav,2.725
+20,Did Alice talk after her crush to dinner?,aux_fronted_inverted,V,audio/item20_aux_fronted_inverted.wav,2.775
+20,Did Alice talk to dinner after her crush?,aux_inverted,V,audio/item20_aux_inverted.wav,2.7
+21,What did the bus collide with during the storm?,wh,G,audio/item21_wh.wav,2.675
+21,What did the bus collide during the storm with?,wh_fronted,G,audio/item21_wh_fronted.wav,2.725
+21,What did the bus collide during with the storm?,wh_fronted_inverted,V,audio/item21_wh_fronted_inverted.wav,2.7
+21,What did the bus collide with the storm during?,wh_inverted,V,audio/item21_wh_inverted.wav,2.7
+21,Did the bus collide with something during the storm?,aux,G,audio/item21_aux.wav,2.95
+21,Did the bus collide during the storm with something?,aux_fronted,G,audio/item21_aux_fronted.wav,2.975
+21,Did the bus collide during something with the storm?,aux_fronted_inverted,V,audio/item21_aux_fronted_inverted.wav,2.925
+21,Did the bus collide with the storm during something?,aux_inverted,V,audio/item21_aux_inverted.wav,3.05
+22,What were you searching for during the lecture?,wh,G,audio/item22_wh.wav,2.575
+22,What were you searching during the lecture for?,wh_fronted,G,audio/item22_wh_fronted.wav,2.6
+22,What were you searching during for the lecture?,wh_fronted_inverted,V,audio/item22_wh_fronted_inverted.wav,2.625
+22,What were you searching for the lecture during?,wh_inverted,V,audio/item22_wh_inverted.wav,2.5
+22,Were you searching for your notes during the lecture?,aux,G,audio/item22_aux.wav,2.9
+22,Were you searching during the lecture for your notes?,aux_fronted,G,audio/item22_aux_fronted.wav,2.85
+22,Were you searching during your notes for the lecture?,aux_fronted_inverted,V,audio/item22_aux_fronted_inverted.wav,2.925
+22,Were you searching for the lecture during your notes?,aux_inverted,V,audio/item22_aux_inverted.wav,2.875
+23,Who was the actor laughing at in this scene?,wh,G,audio/item23_wh.wav,2.675
+23,Who was the actor laughing in this scene at?,wh_fronted,G,audio/item23_wh_fronted.wav,2.625
+23,Who was the actor laughing in at this scene?,wh_fronted_inverted,V,audio/item23_wh_fronted_inverted.wav,2.65
+23,Whoe was the actor laughing at this scene in?,wh_inverted,V,audio/item23_wh_inverted.wav,2.75
+23,Was the actor laughing at someone in this scene?,aux,G,audio/item23_aux.wav,2.8
+23,Was the actor laughing in this scene at someone?,aux_fronted,G,audio/item23_aux_fronted.wav,2.85
+23,Was the actor laughing in someone at this scene?,aux_fronted_inverted,V,audio/item23_aux_fronted_inverted.wav,2.975
+23,Was the actor laughing at this scene in someone?,aux_inverted,V,audio/item23_aux_inverted.wav,3.025
+24,Who were you waiting for outside the restaurant?,wh,G,audio/item24_wh.wav,2.8
+24,Who were you waiting outside the restaurant for?,wh_fronted,G,audio/item24_wh_fronted.wav,2.775
+24,Who were you waiting outside for the restaurant?,wh_fronted_inverted,V,audio/item24_wh_fronted_inverted.wav,2.825
+24,Who were you waiting for the restaurant outside?,wh_inverted,V,audio/item24_wh_inverted.wav,2.9
+24,Were you waiting for me outside the restaurant?,aux,G,audio/item24_aux.wav,2.85
+24,Were you waiting outside the restaurant for me?,aux_fronted,G,audio/item24_aux_fronted.wav,2.775
+24,Were you waiting outside me for the restaurant?,aux_fronted_inverted,V,audio/item24_aux_fronted_inverted.wav,2.775
+24,Were you waiting for the restaurant outside me?,aux_inverted,V,audio/item24_aux_inverted.wav,2.85
+25,Who did you consult with about the diagnosis?,wh,G,audio/item25_wh.wav,3.1
+25,Who did you consult about the diagnosis with?,wh_fronted,G,audio/item25_wh_fronted.wav,3.25
+25,Who did you consult about with the diagnosis?,wh_fronted_inverted,V,audio/item25_wh_fronted_inverted.wav,3.2
+25,Who did you consul with the diagnosis about?,wh_inverted,V,audio/item25_wh_inverted.wav,3.175
+25,Did you consult with the doctor about the diagnosis?,aux,G,audio/item25_aux.wav,3.525
+25,Did you consult about the diagnosis with the doctor?,aux_fronted,G,audio/item25_aux_fronted.wav,3.625
+25,Did you consult about the doctor with the diagnosis?,aux_fronted_inverted,V,audio/item25_aux_fronted_inverted.wav,3.475
+25,Did you consult with the diagnosis about the doctor?,aux_inverted,V,audio/item25_aux_inverted.wav,3.675
+26,Who did Emma confide in about her divorce?,wh,G,audio/item26_wh.wav,3.0
+26,Who did Emma confide about her divorce in?,wh_fronted,G,audio/item26_wh_fronted.wav,2.975
+26,Who did Emma confide about in her divorce?,wh_fronted_inverted,V,audio/item26_wh_fronted_inverted.wav,2.95
+26,Who did Emma confide in her divorce about?,wh_inverted,V,audio/item26_wh_inverted.wav,3.0
+26,Did Emma confide in her therapist about her divorce?,aux,G,audio/item26_aux.wav,3.5
+26,Did Emma confide about her divorce in her therapist?,aux_fronted,G,audio/item26_aux_fronted.wav,3.55
+26,Did Emma confide about her therapist in her divorce?,aux_fronted_inverted,V,audio/item26_aux_fronted_inverted.wav,3.475
+26,Did Emma confide in her divorce about her therapist?,aux_inverted,V,audio/item26_aux_inverted.wav,3.625
+27,What did the student interfere with during the experiment?,wh,G,audio/item27_wh.wav,3.275
+27,What did the student interfere during the experiment with?,wh_fronted,G,audio/item27_wh_fronted.wav,3.3
+27,What did the student interfere during with the experiment?,wh_fronted_inverted,V,audio/item27_wh_fronted_inverted.wav,3.3
+27,What did the student interfere with the experiment during?,wh_inverted,V,audio/item27_wh_inverted.wav,3.325
+27,Did the student interfere with his equipment during the experiment?,aux,G,audio/item27_aux.wav,3.9
+27,Did the student interfere during the experiment with his equipment?,aux_fronted,G,audio/item27_aux_fronted.wav,3.95
+27,Did the student interfere with the experiment during his equipment?,aux_fronted_inverted,V,audio/item27_aux_fronted_inverted.wav,3.95
+27,Did the student interfere during his equipment with the experiment?,aux_inverted,V,audio/item27_aux_inverted.wav,4.1
