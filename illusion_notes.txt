@@ -49,7 +49,7 @@ Oct 27:
         "there are now rumblings that apple might invade the smarth watch space ..."
         it puts the emphasis wrong, it says smart (adj) watch(noun) space instead of (smart watch)(noun) space
         
-        "who were you waiting for outside the restaurant?"
+        "who were you waiting for outside the restaurant?" --- added override, still have to check if it works
         who were you waiting FER outside the RESTRENT
         
         

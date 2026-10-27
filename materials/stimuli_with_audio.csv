@@ -183,7 +183,7 @@ item_id,text,condition_id,grammaticality,audio_file,duration
 23,Was the actor laughing in this scene at someone?,aux_fronted,G,audio/item23_aux_fronted.wav,2.85
 23,Was the actor laughing in someone at this scene?,aux_fronted_inverted,V,audio/item23_aux_fronted_inverted.wav,2.975
 23,Was the actor laughing at this scene in someone?,aux_inverted,V,audio/item23_aux_inverted.wav,3.025
-24,Who were you waiting for outside the restaurant?,wh,G,audio/item24_wh.wav,2.8
+24,Who were you waiting for outside the restaurant?,wh,G,audio/item24_wh.wav,2.85
 24,Who were you waiting outside the restaurant for?,wh_fronted,G,audio/item24_wh_fronted.wav,2.775
 24,Who were you waiting outside for the restaurant?,wh_fronted_inverted,V,audio/item24_wh_fronted_inverted.wav,2.825
 24,Who were you waiting for the restaurant outside?,wh_inverted,V,audio/item24_wh_inverted.wav,2.9
