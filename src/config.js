@@ -23,7 +23,7 @@ export default {
   nLeadingFillers: 1,
 
   // Shuffle the critical items and remaining fillers.
-  shuffleTrials: false,
+  shuffleTrials: true,
 
   // Question asked after each sentence. If an item has its own `question`/`options`
   // columns in the materials CSV, those are used instead. Set enabled: false to go
