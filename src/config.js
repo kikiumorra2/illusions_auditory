@@ -22,7 +22,7 @@ export default {
   // first, unshuffled, so participants warm up on easy sentences.
   nLeadingFillers: 1,
   //total number of fillers
-  nFillers = 27,
+  nFillers: 27,
 
   // Shuffle the critical items and remaining fillers.
   shuffleTrials: true,
