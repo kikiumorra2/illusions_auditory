@@ -22,7 +22,10 @@ item_id,text,condition_id,grammaticality,audio_file,duration
 21,Did the bus collide during the storm with something?,aux_fronted,G,audio/item21_aux_fronted.wav,2.975
 22,Were you searching during your notes for the lecture?,aux_fronted_inverted,V,audio/item22_aux_fronted_inverted.wav,2.925
 23,Was the actor laughing at this scene in someone?,aux_inverted,V,audio/item23_aux_inverted.wav,3.025
-24,Who were you waiting for outside the restaurant?,wh,G,audio/item24_wh.wav,2.8
+24,Who were you waiting for outside the restaurant?,wh,G,audio/item24_wh.wav,2.85
 25,Who did you consult about the diagnosis with?,wh_fronted,G,audio/item25_wh_fronted.wav,3.25
 26,Who did Emma confide about in her divorce?,wh_fronted_inverted,V,audio/item26_wh_fronted_inverted.wav,2.95
 27,What did the student interfere with the experiment during?,wh_inverted,V,audio/item27_wh_inverted.wav,3.325
+28,Did you end up at the bar on your date?,aux,G,audio/item28_aux.wav,2.45
+29,Was he thinking in his room about jobs?,aux_fronted,G,audio/item29_aux_fronted.wav,2.5
+30,Did she get up during no good to the night?,aux_fronted_inverted,V,audio/item30_aux_fronted_inverted.wav,2.5

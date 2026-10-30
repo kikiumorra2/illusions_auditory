@@ -26,3 +26,6 @@ item_id,text,condition_id,grammaticality,audio_file,duration
 25,Did you consult with the doctor about the diagnosis?,aux,G,audio/item25_aux.wav,3.525
 26,Did Emma confide about her divorce in her therapist?,aux_fronted,G,audio/item26_aux_fronted.wav,3.55
 27,Did the student interfere with the experiment during his equipment?,aux_fronted_inverted,V,audio/item27_aux_fronted_inverted.wav,3.95
+28,Did you end up at your date on the bar?,aux_inverted,V,audio/item28_aux_inverted.wav,2.45
+29,What was he thinking about in his room?,wh,G,audio/item29_wh.wav,2.35
+30,What did she get up during the night to?,wh_fronted,G,audio/item30_wh_fronted.wav,2.35

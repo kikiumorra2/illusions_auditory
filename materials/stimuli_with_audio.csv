@@ -215,3 +215,27 @@ item_id,text,condition_id,grammaticality,audio_file,duration
 27,Did the student interfere during the experiment with his equipment?,aux_fronted,G,audio/item27_aux_fronted.wav,3.95
 27,Did the student interfere with the experiment during his equipment?,aux_fronted_inverted,V,audio/item27_aux_fronted_inverted.wav,3.95
 27,Did the student interfere during his equipment with the experiment?,aux_inverted,V,audio/item27_aux_inverted.wav,4.1
+28,Where did you end up at on your date?,wh,G,audio/item28_wh.wav,2.25
+28,Where did you end up on your date at?,wh_fronted,G,audio/item28_wh_fronted.wav,2.25
+28,Where did you end up on at your date?,wh_fronted_inverted,V,audio/item28_wh_fronted_inverted.wav,2.225
+28,Where did you end up at your date on?,wh_inverted,V,audio/item28_wh_inverted.wav,2.275
+28,Did you end up at the bar on your date?,aux,G,audio/item28_aux.wav,2.45
+28,Did you end up on your date at the bar?,aux_fronted,G,audio/item28_aux_fronted.wav,2.5
+28,Did you end up on the bar at your date?,aux_fronted_inverted,V,audio/item28_aux_fronted_inverted.wav,2.45
+28,Did you end up at your date on the bar?,aux_inverted,V,audio/item28_aux_inverted.wav,2.45
+29,What was he thinking about in his room?,wh,G,audio/item29_wh.wav,2.35
+29,What was he thinking in his room about?,wh_fronted,G,audio/item29_wh_fronted.wav,2.275
+29,What was he thinking in about his room?,wh_fronted_inverted,V,audio/item29_wh_fronted_inverted.wav,2.45
+29,What was he thinking about his room in?,wh_inverted,V,audio/item29_wh_inverted.wav,2.4
+29,Was he thinking about jobs in his room?,aux,G,audio/item29_aux.wav,2.6
+29,Was he thinking in his room about jobs?,aux_fronted,G,audio/item29_aux_fronted.wav,2.5
+29,Was he thinking in jobs about his room?,aux_fronted_inverted,V,audio/item29_aux_fronted_inverted.wav,2.65
+29,Was he thinking about his room in jobs?,aux_inverted,V,audio/item29_aux_inverted.wav,2.625
+30,What did she get up to during the night?,wh,G,audio/item30_wh.wav,2.275
+30,What did she get up during the night to?,wh_fronted,G,audio/item30_wh_fronted.wav,2.35
+30,What did she get up during to the night?,wh_fronted_inverted,V,audio/item30_wh_fronted_inverted.wav,2.375
+30,What did she get up to the night during?,wh_inverted,V,audio/item30_wh_inverted.wav,2.275
+30,Did she get up to no good during the night?,aux,G,audio/item30_aux.wav,2.5
+30,Did she get up during the night to no good?,aux_fronted,G,audio/item30_aux_fronted.wav,2.55
+30,Did she get up during no good to the night?,aux_fronted_inverted,V,audio/item30_aux_fronted_inverted.wav,2.5
+30,Did she get up to the night during no good?,aux_inverted,V,audio/item30_aux_inverted.wav,2.55
