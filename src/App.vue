@@ -192,8 +192,7 @@
     <InstructionScreen title="Instructions">
       <p>
         
-        In this study, you will listen to some sentences. <b>Feel free to go back and re-listen to any part of the sentence</b> by dragging the audio player.
-        You can drag it backward or forward as you wish.
+        In this study, you will listen to some sentences. <b>Feel free to go back and re-listen to any part of the sentence</b> by dragging the audio player. 
         Take as much time as you need on any sentence — there is no rush! 
         When you are done reading, click the <b>Done Reading</b> button.
       </p>
@@ -205,14 +204,30 @@
       </p>
       
       <p>
-        The first question asks how grammatically correct the sentence sounds to you. 
-        For this rating, judge only whether the sentence could be a grammatically correct sentence in English -- 
-        ignore whether the situation it describes is strange, unlikely, or unrealistic.
+        <b>Question 1: Grammatical correctness</b><br>
+        How grammatically correct does the sentence sound in English?
+        Focus only on grammar, not on whether the sentence makes sense.
+        A sentence can be grammatically correct even if it describes something strange or impossible.
+      </p>
+      
+      <p>
+        <b>Question 2: Plausabilty</b><br>
+        How likely is the situation described in the sentence to happen in real life?
+        Focus only on whether the situation is realistic or understandable, not on whether the sentence is grammatically correct.
       </p>
 
       <p>
-        The second question asks how plausible the situation that is described in the sentence is. 
-        Judge how normal or plausible the situation the sentence describes would be in the real world, regardless of how grammatical the sentence sounds.
+        For example, "The purple elephant sings in the kitchen" describes an implausible situation,
+        even though the sentence is grammatically correct.
+        In contrast, "The students walks to school" describes a plausible situation,
+        even though the sentence is grammatically incorrect.
+        Finally, "The spoon on under purple bent" is both grammatically incorrect and the situation
+        it describes is unclear/implausible.
+      </p>
+
+      <p>
+        <b>Remember:</b> The two ratings are separate.
+        A sentence can be grammatically correct but implausible, or grammatically incorrect but plausible.
       </p>
 
       <p>
