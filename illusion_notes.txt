@@ -53,3 +53,24 @@ Oct 27:
         who were you waiting FER outside the RESTRENT
         
         
+        
+        
+        
+        
+    
+- do trigrams for every three words in sentence
+- separately get gpt2 surprisals -- doesnt explain why but interesting
+- make mousetracking study for the same set of stimuli
+- make fillers that are the same length as exp items, make wh-questions, make some of them have violations but different unrelated violations. More grammatical variety. Add subj-verb disagreement.
+- change the 1-7 scale from well-formed to grammatical
+- change the instructions to make them more sense
+- ask Tal if this falls under his IRB
+
+
+to do:
+- 
+
+
+overall deadline january 
+        
+        
