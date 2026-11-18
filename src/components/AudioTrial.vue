@@ -70,8 +70,8 @@
         </p>
 
         <div class="scale-labels">
-          <span>Not at all well-formed</span>
-          <span>Completely well-formed</span>
+          <span>Not at all grammatical</span>
+          <span>Completely grammatical</span>
         </div>
 
         <div class="scale">
